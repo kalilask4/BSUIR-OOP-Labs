@@ -27,8 +27,8 @@ namespace OOP_lab4
 
         public override void print_description(string additional_description = "")
         {
-            Console.WriteLine("A neutron star is the collapsed core of a massive supergiant star, " +
-                "which had a total mass of between 10 and 25 solar masses. " + additional_description);
+            Console.WriteLine("A neutron star is the collapsed core of a massive supergiant star, \n" +
+                "which had a total mass of between 10 and 25 solar masses. \n" + additional_description);
         }
 
     }

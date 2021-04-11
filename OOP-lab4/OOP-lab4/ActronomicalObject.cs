@@ -39,18 +39,18 @@ namespace OOPlaba4
 
         public virtual void print_description(string additional_description="")
         {
-            Console.WriteLine("An astronomical object or celestial object " +
-            "is a naturally occurring physical entity, association, or structure " + 
+            Console.WriteLine("An astronomical object or celestial object \n" +
+            "is a naturally occurring physical entity, association, or structure \n" + 
             "that exists in the observable universe." + additional_description);
             
         }        
 
-        public double calculate_base_pathtime() //расчет времени пути до земли. Базовая скорость из константы BASESPEED
+        public double calculate_base_pathtime() //доработать, если буду работать с этой прогой: расчет времени пути до земли (базовая скорость из константы BASESPEED)
         {
             return 0;
         }
 
-        abstract public double ad(); //рекламный слоган
+        abstract public double ad(); //рекламный слоган. Позже можно доработать, если буду работать с этой прогой
 
         public override string ToString()
         {

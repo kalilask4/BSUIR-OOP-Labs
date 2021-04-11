@@ -4,7 +4,7 @@ using System.Text;
 
 namespace OOP_lab4
 {
-    sealed class Black_hole : Star //закрытый для наследования
+    sealed class Blackhole : Star //закрытый для наследования
     {
         private double sun_mass_before_explosion;
 
@@ -18,7 +18,7 @@ namespace OOP_lab4
             }
         }
 
-        public Black_hole(string name, double sun_mass_before_explosion, double temperature_K,
+        public Blackhole(string name, double sun_mass_before_explosion, double temperature_K,
                            double sun_mass, double earth_mass, double earth_distance, string legend)
     : base(name, temperature_K, sun_mass, earth_mass, earth_distance, legend)
         {
