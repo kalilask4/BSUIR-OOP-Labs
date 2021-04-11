@@ -24,7 +24,7 @@ namespace OOPlaba4
         {
         }
 
-        protected AstronomicalObject(string name, double earth_mass, double earth_distance, double temperature_K, string legend)
+        protected AstronomicalObject(string name, double earth_mass, double earth_distance, string legend)
         {
             Name = name;
             Earth_mass = earth_mass;

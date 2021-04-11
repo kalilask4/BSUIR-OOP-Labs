@@ -33,6 +33,13 @@ namespace OOP_lab4
             Sun_mass = sun_mass;
         }
 
+        public Star(string name, double temperature_K, double sun_mass, double earth_mass, double earth_distance, string legend) 
+            : base(name, earth_mass, earth_distance, legend)
+        {
+            Temperature_K = temperature_K;
+            Sun_mass = sun_mass;
+        }
+
         public override double ad()
         {
             throw new NotImplementedException();
