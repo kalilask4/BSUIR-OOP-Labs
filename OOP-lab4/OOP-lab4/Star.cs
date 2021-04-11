@@ -39,7 +39,7 @@ namespace OOP_lab4
             throw new NotImplementedException();
         }
 
-        public override void print_description() //переопределение метода, у класса asteroid не будет переопределен
+        public override void print_description() //переопределение метода, у класса Asteroid не будет переопределен
         {
 
             Console.WriteLine("An astronomical object consisting of a luminous spheroid of plasma held own gravity.\n" +

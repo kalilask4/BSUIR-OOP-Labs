@@ -16,6 +16,11 @@ namespace OOP_lab4
             Star star1 = new Star("Sun", 5778, 1);
             Console.WriteLine(star1.ToString());
             star1.print_description();
+            Console.WriteLine("------------ Obj2 - Asteroid ------------");
+            Asteroid asteroid1 = new Asteroid("Melanholia");
+            asteroid1.print_description(); //метод род.кл. AstrObj переопределен не был
+            Console.WriteLine(asteroid1); 
+
         }
     }
 }
