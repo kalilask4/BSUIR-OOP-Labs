@@ -11,32 +11,24 @@ namespace OOPlaba4
         public double earth_mass;    // относительно земли 1 M⊕ = (5,9722 ± 0,0006) × 1024 кг
         public double sun_mass;    // относительно земли 1 M⊕ = (5,9722 ± 0,0006) × 1024 кг
         public double earth_distance;    //расстояние до земли св.л (1пс=3,2 св.года), max=13,035 млрд. св.л.
-        //double temperature_K; //средняя температура в Кельвинах
-        string legend = "Unsafe for humans.";
-
-
+        public string legend = "Unsafe for humans.";
 
         public string Name { get => name; set => name = value; }
         public string Type_object { get => type_object; set => type_object = value; }
         public double Earth_mass { get => earth_mass; set => earth_mass = value; }
         public virtual double Sun_mass { get => sun_mass; set => sun_mass = value; }
         public double Earth_distance { get => earth_distance; set => earth_distance = value; }
-        //public double Temperature_K { get => temperature_K; set => temperature_K = value; }
         public string Legend { get => legend; set => legend = value; }
-        
 
         public AstronomicalObject()
         {
         }
-
-
 
         protected AstronomicalObject(string name, double earth_mass, double earth_distance, double temperature_K, string legend)
         {
             Name = name;
             Earth_mass = earth_mass;
             Earth_distance = earth_distance;
-            //Temperature_K = temperature_K;
             Legend = legend;
         }
 
@@ -51,8 +43,7 @@ namespace OOPlaba4
             "is a naturally occurring physical entity, association, or structure " + 
             "that exists in the observable universe.");
             
-        }
-        
+        }        
 
         public double calculate_base_pathtime() //расчет времени пути до земли. Базовая скорость из константы BASESPEED
         {

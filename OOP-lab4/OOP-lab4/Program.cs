@@ -15,10 +15,10 @@ namespace OOP_lab4
             Console.WriteLine("------------ Obj1 - Sun ------------");
             Star star1 = new Star("Sun", 5778, 1);
             Console.WriteLine(star1.ToString());
-            star1.print_description();
+            star1.print_description(); //метод род.кл. переопределен
             Console.WriteLine("------------ Obj2 - Asteroid ------------");
             Asteroid asteroid1 = new Asteroid("Melanholia");
-            asteroid1.print_description(); //метод род.кл. AstrObj переопределен не был
+            asteroid1.print_description(); //метод род.кл. переопределен не был
             Console.WriteLine(asteroid1); 
 
         }

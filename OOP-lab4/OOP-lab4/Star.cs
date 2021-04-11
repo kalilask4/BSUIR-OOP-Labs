@@ -18,7 +18,6 @@ namespace OOP_lab4
             {
                 if (value > 0.07 & value <= 315) 
                     sun_mass = value;
-
             }
         }
 
