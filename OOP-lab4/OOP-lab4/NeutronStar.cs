@@ -8,7 +8,7 @@ namespace OOP_lab4
     {
         private double sun_mass_before_explosion;
 
-        public virtual double Sun_mass_beforee_xplosion { 
+        public virtual double Sun_mass_before_explosion { 
             get => sun_mass_before_explosion;
             set
             {
@@ -21,8 +21,8 @@ namespace OOP_lab4
                            double sun_mass, double earth_mass, double earth_distance, string legend)
     : base( name, temperature_K, sun_mass, earth_mass, earth_distance, legend)
         {
-            Type_object = "NeutronStar";
-            Sun_mass_beforee_xplosion = sun_mass_before_explosion;
+            Type_object = "Neutron Star";
+            Sun_mass_before_explosion = sun_mass_before_explosion;
         }
 
         public override void print_description(string additional_description = "")

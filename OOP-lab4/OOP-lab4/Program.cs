@@ -28,13 +28,11 @@ namespace OOP_lab4
             asteroid1.print_description(); //метод род.кл. переопределен не был
             Console.WriteLine(asteroid1);
             imitate_loading("Research asteroid");
-            Console.WriteLine("..");
-            Thread.Sleep(1000);
-            Console.WriteLine("Research finished");
+            Console.WriteLine("..Research finished");
             asteroid1.Legend = "Impact - zero probability. Suitable for ore mining"; //позже можно доработать: данное поле изменяет обект класса - SpaceProbe
             Console.WriteLine(asteroid1);
                         
-            imitate_loading(" Obj4 - NeutronStar");
+            imitate_loading("Obj4 - NeutronStar");
             NeutronStar neutronStar1 = new NeutronStar("Alma Star", 17, 111, 8, 2663568, 168000, "");
             Console.WriteLine(neutronStar1);
             neutronStar1.print_description("SN 1987A was a type II supernova in the Large Magellanic Cloud, a dwarf satellite galaxy of the Milky Way.");
