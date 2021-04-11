@@ -8,8 +8,8 @@ namespace OOPlaba4
     {
         public string name = "Noname";
         public string type_object = "Indefinite";
-        public double earth_mass;    // относительно земли 1 M⊕ = (5,9722 ± 0,0006) × 1024 кг
-        public double sun_mass;    // относительно земли 1 M⊕ = (5,9722 ± 0,0006) × 1024 кг
+        public double earth_mass;    // относительно Земли 1 M⊕ = (5,9722 ± 0,0006) × 1024 кг
+        public double sun_mass;   //относительно массы Солнца
         public double earth_distance;    //расстояние до земли св.л (1пс=3,2 св.года), max=13,035 млрд. св.л.
         public string legend = "Unsafe for humans.";
 
@@ -37,11 +37,11 @@ namespace OOPlaba4
             Name = name;
         }
 
-        public virtual void print_description()
+        public virtual void print_description(string additional_description="")
         {
             Console.WriteLine("An astronomical object or celestial object " +
             "is a naturally occurring physical entity, association, or structure " + 
-            "that exists in the observable universe.");
+            "that exists in the observable universe." + additional_description);
             
         }        
 

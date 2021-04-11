@@ -36,6 +36,7 @@ namespace OOP_lab4
         public Star(string name, double temperature_K, double sun_mass, double earth_mass, double earth_distance, string legend) 
             : base(name, earth_mass, earth_distance, legend)
         {
+            Type_object = "Star";
             Temperature_K = temperature_K;
             Sun_mass = sun_mass;
         }
@@ -45,12 +46,11 @@ namespace OOP_lab4
             throw new NotImplementedException();
         }
 
-        public override void print_description() //переопределение метода, у класса Asteroid не будет переопределен
+        public override void print_description(string additional_description="") //переопределение метода, у класса Asteroid не будет переопределен
         {
-
             Console.WriteLine("An astronomical object consisting of a luminous spheroid of plasma held own gravity.\n" +
                 Type_object + " " + Name + " has temperature " + Temperature_K
-                + " K. " ); 
+                + " K. " + additional_description ); 
         }
     }
 }
