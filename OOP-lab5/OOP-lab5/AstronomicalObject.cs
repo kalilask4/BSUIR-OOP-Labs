@@ -24,10 +24,7 @@ namespace OOP_lab5
             Legend = legend;
         }
 
-        public override string ToString()
-        {
-            return "Object name: " + Name + ". Object type: " + Type_object + ". " + Legend;
-        }
+
 
 
     }

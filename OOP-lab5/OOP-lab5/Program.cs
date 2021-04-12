@@ -16,10 +16,20 @@ namespace OOP_lab5
             Planet planet2 = new Planet("Earth", 0, "Blue planet", "Sun");
             Console.WriteLine(planet2);
 
-            Spacecraft probe1 = new Spacecraft("Voyager", "Planets exploration", 1.2);
+            Planet planet3 = new Planet("Dimidium", 50, "Hot Jupiter", "51 Pegasi");
+            Console.WriteLine(planet3);
+
+            Console.WriteLine();
+            Spacecraft probe1 = new Spacecraft("Voyager", "planets exploration", 1.2);
             Console.WriteLine(probe1);
             probe1.move(planet2, planet1);
             probe1.calc_time(planet2, planet1.Earth_distance);
+
+            Console.WriteLine();
+            MannedSpacecraft ship1 = new MannedSpacecraft("Starship", "traveling", 0.7);
+            Console.WriteLine(ship1);
+            ship1.Move(planet2, planet3);
+            ship1.calc_time(planet2, planet1.Earth_distance);
 
 
 

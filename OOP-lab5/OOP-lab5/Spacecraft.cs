@@ -4,6 +4,7 @@ using System.Text;
 
 namespace OOP_lab5
 {
+    //реализует 1 интерфейс - Imoving
     class Spacecraft : Imoving
     {
         string name;
@@ -40,14 +41,9 @@ namespace OOP_lab5
             Console.WriteLine("Moving from " + a + "to " + destination);
         }
 
-        /*public void calc_time(Planet a, double path)
-        {
-            Console.WriteLine("Travel time will take " + (a.Earth_distance + path) / this.Speed);
-        }*/
-
         public void calc_time(Planet a, double path)
         {
-            Console.WriteLine("Travel time will take " + Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
+            Console.WriteLine("Path long " + Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
         }
 
     }

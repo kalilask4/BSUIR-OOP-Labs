@@ -4,6 +4,7 @@ using System.Text;
 
 namespace OOP_lab5
 {
+    //реализует 2 интерфейса - Imoving, Ipromote
     class MannedSpacecraft : Spacecraft
     {
         public MannedSpacecraft()
@@ -16,15 +17,15 @@ namespace OOP_lab5
 
         public void Move(Planet a, Planet b)
         {
-            Console.WriteLine("Moving to " + b.Name);
+            Console.WriteLine("Traveling from " + a.Name + " to " + b.Name);
         }
-                
-        /*
-        public void Calc_time(Planet a, double path)
-        {        
-            Console.WriteLine("1Travel time will take " + Math.Round((a.Earth_distance + path/this.Speed), 2) + " years");
-        }
-        */
+
+       /* public void Calc_time(Planet a, double path)
+        {
+            Console.WriteLine("Travel time will take " + Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
+        }*/
+
+
 
     }
 }
