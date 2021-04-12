@@ -4,9 +4,9 @@ using System.Text;
 
 namespace OOP_lab5
 {
-    interface Ipromote
+    interface IPromote
     {
-        public void sell();
-        public void calc_time(Planet a, double path);
+        public void Sell();
+        public void Calc_time(Planet a, double path); //здесь будет конфликт имен при имплементации обоих интерфейсов
     }
 }

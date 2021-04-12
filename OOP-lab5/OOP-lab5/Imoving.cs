@@ -4,9 +4,9 @@ using System.Text;
 
 namespace OOP_lab5
 {
-    interface Imoving
+    interface IMoving
     {
-        public void move(Planet a, Planet b);
-        public void calc_time(Planet a, double path);
+        public void Move(Planet a, Planet b);
+        public void Calc_time(Planet a, double path);//здесь будет конфликт имен при имплементации обоих интерфейсов
     }
 }

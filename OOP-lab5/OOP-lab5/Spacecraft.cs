@@ -5,7 +5,7 @@ using System.Text;
 namespace OOP_lab5
 {
     //реализует 1 интерфейс - Imoving
-    class Spacecraft : Imoving
+    class Spacecraft : IMoving
     {
         string name;
         string use;
@@ -31,20 +31,24 @@ namespace OOP_lab5
             return "Spacecraft " + Name + " for " + Use + ". Speed: " + Speed + " au";
         }
 
-        public void move(Planet a, Planet b)
+        public void Move(Planet a, Planet b)
         {
             Console.WriteLine("Moving to " + b.Name);
         }
 
-        public void move(Planet a, string destination)
+        //Если точка назначения не планета
+       /* public void Move(Planet a, string destination)
         {
             Console.WriteLine("Moving from " + a + "to " + destination);
-        }
+        }*/
 
-        public void calc_time(Planet a, double path)
+        //Расчет в одну сторону
+        public void Calc_time(Planet a, double path)
         {
             Console.WriteLine("Path long " + Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
         }
+
+
 
     }
 }
