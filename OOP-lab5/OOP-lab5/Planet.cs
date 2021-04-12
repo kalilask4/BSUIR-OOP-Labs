@@ -6,8 +6,7 @@ namespace OOP_lab5
 {
     class Planet : AstronomicalObject
     {
-
-        
+               
         private double earth_distance;    //расстояние до земли св.л (1пс=3,2 св.года), max=13,035 млрд. св.л.
         string star;
         public double Earth_distance { get => earth_distance; set => earth_distance = value; }
@@ -35,6 +34,9 @@ namespace OOP_lab5
             Star = star;
         }
 
-        
+
+
+
+
     }
 }

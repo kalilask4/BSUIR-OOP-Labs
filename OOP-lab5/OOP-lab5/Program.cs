@@ -16,6 +16,11 @@ namespace OOP_lab5
             Planet planet2 = new Planet("Earth", 0, "Blue planet", "Sun");
             Console.WriteLine(planet2);
 
+            Spacecraft probe1 = new Spacecraft("Voyager", "Planets exploration", 1.2);
+            Console.WriteLine(probe1);
+            probe1.move(planet2, planet1);
+            probe1.calc_time(planet2, planet1.Earth_distance);
+
 
 
         }

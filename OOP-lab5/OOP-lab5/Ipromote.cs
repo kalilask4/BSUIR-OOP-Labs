@@ -7,6 +7,6 @@ namespace OOP_lab5
     interface Ipromote
     {
         public void sell();
-        public void calc_time(Planet a, Planet b);
+        public void calc_time(Planet a, double path);
     }
 }
