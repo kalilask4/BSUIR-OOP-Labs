@@ -5,6 +5,7 @@ namespace OOPlaba3
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             //Если в конструктор ничего не передавать, создается автосервис с 1 станцией ТО, вместимостью 1 авто

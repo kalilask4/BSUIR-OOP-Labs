@@ -7,6 +7,7 @@ namespace OOPlaba3
     class AutoService
     {
         public string Name { get; set; }
+
         public Station[] stations;
 
         public AutoService()
