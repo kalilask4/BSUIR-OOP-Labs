@@ -4,8 +4,8 @@ using System.Text;
 
 namespace OOP_lab5
 {
-    //реализует 2 интерфейса - Imoving, Ipromote
-    class MannedSpacecraft : Spacecraft /*Imoving, Ipromote*/
+    //реализует 2 интерфейса - IMoving, IPromote
+    class MannedSpacecraft : Spacecraft, IMoving, IPromote
     {
         public MannedSpacecraft()
         {
@@ -22,23 +22,30 @@ namespace OOP_lab5
 
 
 
-        public void Calc_time(Planet a, double path)
+        public void Calc_time(Planet a, double path)  //склеивание - метод из двух классов реализован 1 раз
          {
              Console.WriteLine("Travel time will take " + Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
          }
 
-        /*
-        void Ipromote.Calc_time(Planet a, double path)
+        void IPromote.Calc_time(Planet a, double path) //кастинг
         {
             throw new NotImplementedException();
         }
 
-        void Ipromote.Sell()
+        void IMoving.Calc_time(Planet a, double path) //кастинг
         {
             throw new NotImplementedException();
         }
 
-        */
+
+        void IPromote.Sell()
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+
 
     }
 }
