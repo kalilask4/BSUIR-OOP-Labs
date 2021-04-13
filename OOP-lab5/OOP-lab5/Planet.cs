@@ -5,7 +5,7 @@ using System.Text;
 namespace OOP_lab5
 {
     //реализует 1 интерфейс - Ipromote
-    class Planet : AstronomicalObject
+    class Planet : AstronomicalObject, IPromote
     {
                
         private double earth_distance;    //расстояние до земли св.л (1пс=3,2 св.года), max=13,035 млрд. св.л.
@@ -36,11 +36,21 @@ namespace OOP_lab5
         }
 
 
+        public void Sell()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Calc_time(Planet a, double path)
+        {
+            throw new NotImplementedException();
+        }
+
+
         public override string ToString()
         {
             return "Object name: " + Name + ". Object type: " + Type_object + ". " + "Star - " + Star + ". "+ Legend;
         }
-
 
     }
 }
