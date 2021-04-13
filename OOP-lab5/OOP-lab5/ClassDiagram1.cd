@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OOP_lab5.Program">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_lab5.MannedSpacecraft">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAIBAAQAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MannedSpacecraft.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.579" />
+  </Class>
+  <Class Name="OOP_lab5.Spacecraft">
+    <Position X="2.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIBAAAAEAAAAAAQBAAAEAQAABAAAAAAAAAA=</HashCode>
+      <FileName>Spacecraft.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="1.196" />
+  </Class>
+  <Class Name="OOP_lab5.Planet">
+    <Position X="4.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAEQAAAAAAQAACAEAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Planet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.591" />
+  </Class>
+  <Class Name="OOP_lab5.AstronomicalObject">
+    <Position X="4.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAQAAAAEAAAAAEAAAABAAAQ=</HashCode>
+      <FileName>AstronomicalObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="OOP_lab5.IPromote" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Ipromote.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="OOP_lab5.IMoving" Collapsed="true">
+    <Position X="6.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Imoving.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
