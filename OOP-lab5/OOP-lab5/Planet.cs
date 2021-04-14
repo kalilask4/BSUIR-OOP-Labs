@@ -4,7 +4,6 @@ using System.Text;
 
 namespace OOP_lab5
 {
-    //реализует 1 интерфейс - Ipromote
     class Planet : AstronomicalObject, IPromote
     {
                
@@ -25,12 +24,12 @@ namespace OOP_lab5
 
         public Planet()
         {
-            type_object = "Planet";
+            Type_object = "Planet";
         }
 
         public Planet(string name, double earth_distance, string legend, string star) : base(name, legend)
         {
-            type_object = "Planet";
+            Type_object = "Planet";
             Earth_distance = earth_distance;
             Star = star;
         }
@@ -49,7 +48,7 @@ namespace OOP_lab5
 
         public override string ToString()
         {
-            return "Object name: " + Name + ". Object type: " + Type_object + ". " + "Star - " + Star + ". "+ Legend;
+            return  this.Type_object + " name: " + Name + ". Star - " + Star + ". "+ Legend;
         }
 
     }

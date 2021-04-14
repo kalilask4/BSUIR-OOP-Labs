@@ -5,7 +5,7 @@ using System.Text;
 namespace OOP_lab5
 {
     //реализует 2 интерфейса - IMoving, IPromote
-    class MannedSpacecraft : Spacecraft, IMoving, IPromote
+    class MannedSpacecraft : Spacecraft, IMoving, IPromote  //IMoving получен из родительского, здесь указан явно
     {
         public MannedSpacecraft()
         {
@@ -22,7 +22,7 @@ namespace OOP_lab5
 
 
 
-        public void Calc_time(Planet a, double path)  //склеивание - метод из двух классов реализован 1 раз
+        public override void Calc_time(Planet a, double path)  //склеивание - метод из двух интерфейсов реализован 1 раз
          {
              Console.WriteLine("Travel time will take " + Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
          }

@@ -10,10 +10,12 @@ namespace OOP_lab5
         string name;
         string use;
         double speed; //расчет скоростей и расстояний упрощен. а.е
+        public string type_object = "Spacecraft";
 
         public string Name { get => name; set => name = value; }
         public string Use { get => use; set => use = value; }
         public double Speed { get => speed; set => speed = value; }
+        public string Type_object { get => type_object; set => type_object = value; }
 
         public Spacecraft()
         {
@@ -26,14 +28,16 @@ namespace OOP_lab5
             Speed = speed;
         }
 
-        public override string ToString()
+        public override string ToString() //переопределен метод родительского класса
         {
-            return "Spacecraft " + Name + " for " + Use + ". Speed: " + Speed + " au";
+            return this.Type_object + " " + Name + " for " + Use + ". Speed: " + Speed + " au";
         }
 
         public void Move(Planet a, Planet b)
         {
-            Console.WriteLine("Moving to " + b.Name);
+            //Console.WriteLine(" *IMoving");
+            Console.WriteLine("Moving (as a " + this.Type_object + ") - interplanetary flight:");
+            Console.WriteLine(a.Name + " ------> " + b.Name);
         }
 
         //Если точка назначения не планета
@@ -43,9 +47,11 @@ namespace OOP_lab5
         }*/
 
         //Расчет в одну сторону
-        public void Calc_time(Planet a, double path)
+        public virtual void Calc_time(Planet a, double path)
         {
-            Console.WriteLine("Path long " + Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
+            //Console.WriteLine(" *IMoving");
+            Console.Write("Will arrive for research (as a " + this.Type_object + ") in ");
+            Console.WriteLine(Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
         }
 
 
