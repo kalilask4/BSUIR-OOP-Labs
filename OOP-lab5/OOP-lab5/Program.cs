@@ -42,16 +42,28 @@ namespace OOP_lab5
             Console.WriteLine();
 
             Console.WriteLine("------------------------------------------------------------");
-            //Кастинг и склейка
             Planet planet4 = new Planet("Saturn", 10.7, "Beautiful planet", "Sun");
             Console.WriteLine(planet4);
             MannedSpacecraft ship2 = new MannedSpacecraft("Rise", "traveling", 3.7);
             Console.WriteLine(ship2);
             ship2.Move(planet2, planet4);
+
+            //Gluing
             ship2.Calc_time(planet2, planet4.Earth_distance);
+            //Casting
+            ((IPromote)ship2).Calc_time(planet2, planet4.Earth_distance);
+            ((IMoving)ship2).Calc_time(planet2, planet4.Earth_distance);
             
-            
-            
+            //Метод изменяющий поля обекта
+            Console.WriteLine("Count tickets: " + planet4.Count_tickets);
+            planet4.Sell(1);
+            Console.WriteLine("Count tickets: " + planet4.Count_tickets);
+            planet4.Sell(5);
+            Console.WriteLine("Count tickets: " + planet4.Count_tickets);
+
+
+
+
             Console.WriteLine();
 
 

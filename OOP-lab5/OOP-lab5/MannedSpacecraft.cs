@@ -21,27 +21,27 @@ namespace OOP_lab5
 
         public new void Move(Planet a, Planet b) //метод из Imoving, из родительского класса, переопределен
         {
-            Console.WriteLine(" *IMoving - Move as MannedSpacecraft");
-            Console.Write("Moving (--as a " + this.Type_object + "--).");
-            Console.WriteLine("Delivery of tourists and cargo: from " + a.Name + " --> " + b.Name);
-            //Console.WriteLine(a.Name + " ------> " + b.Name);
+            //Console.WriteLine(" *IMoving - Move as MannedSpacecraft");
+            //Console.Write("Moving (--as a " + this.Type_object + "--).");
+            Console.WriteLine("Delivery of tourists and cargo: from " + a.Name + " --> " + b.Name);  
         }
 
         public override void Calc_time(Planet a, double path)  //склеивание - метод из двух интерфейсов реализован 1 раз
          {
             //Console.WriteLine(" *склеивание");
-            Console.Write("The way back and forth (--as " + this.Type_object + "--). ");
-            Console.WriteLine("Travel time will take ()" + Math.Round(((2*a.Earth_distance + path) / this.Speed), 2) + " years");
+            Console.Write("(Gluing)The way back and forth. ");
+            //Console.Write(" (--as " + this.Type_object + "--).");
+            Console.WriteLine("Travel time will take " + Math.Round(((a.Earth_distance + 2*path) / this.Speed), 2) + " years");
          }
 
         void IPromote.Calc_time(Planet a, double path) //кастинг
         {
-            Console.Write("Add: Chose our's trip! It takes " + Math.Round(((a.Earth_distance + path) / this.Speed), 2) + " years");
+            Console.WriteLine("(IPromote) Add: Choose our's trip! It takes " + Math.Round(((a.Earth_distance + path) / this.Speed), 2) + " years");
         }
 
         void IMoving.Calc_time(Planet a, double path) //кастинг
         {
-            Console.WriteLine("Travel time will take ()" + Math.Round(((2 * a.Earth_distance + path) / this.Speed), 2) + " years");
+            Console.WriteLine("(IMoving) Travel time will take " + Math.Round(((a.Earth_distance + 2*path) / this.Speed), 2) + " years");
         }
 
 
