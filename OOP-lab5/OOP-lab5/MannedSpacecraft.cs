@@ -5,7 +5,7 @@ using System.Text;
 namespace OOP_lab5
 {
     //реализует 2 интерфейса - IMoving, IPromote
-    class MannedSpacecraft : Spacecraft, IMoving, IPromote  //IMoving получен из родительского, здесь указан явно
+    class MannedSpacecraft : Spacecraft, IMoving, IPromote  //IMoving получен из родительского, но нужно явно указывать
     {
         public new string type_object = "MannedSpacecraft";
 
@@ -36,18 +36,18 @@ namespace OOP_lab5
 
         void IPromote.Calc_time(Planet a, double path) //кастинг
         {
-            throw new NotImplementedException();
+            Console.Write("Add: Chose our's trip! It takes " + Math.Round(((a.Earth_distance + path) / this.Speed), 2) + " years");
         }
 
         void IMoving.Calc_time(Planet a, double path) //кастинг
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Travel time will take ()" + Math.Round(((2 * a.Earth_distance + path) / this.Speed), 2) + " years");
         }
 
 
-        void IPromote.Sell()
+        void IPromote.Sell(int count_tickets)
         {
-            throw new NotImplementedException();
+            Console.Write("Left with " + this + "place(es)");
         }
 
         public override string ToString() //переопределен метод родительского класса

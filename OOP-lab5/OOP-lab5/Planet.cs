@@ -11,7 +11,6 @@ namespace OOP_lab5
         string star;
         public double Earth_distance { get => earth_distance; set => earth_distance = value; }
 
-
         public string Star
         {
             get { return star; }
@@ -35,7 +34,7 @@ namespace OOP_lab5
         }
 
 
-        public void Sell()
+        public void Sell(int count_tickets)
         {
             throw new NotImplementedException();
         }

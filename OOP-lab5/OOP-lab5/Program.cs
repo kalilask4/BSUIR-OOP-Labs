@@ -42,7 +42,17 @@ namespace OOP_lab5
             Console.WriteLine();
 
             Console.WriteLine("------------------------------------------------------------");
-
+            //Кастинг и склейка
+            Planet planet4 = new Planet("Saturn", 10.7, "Beautiful planet", "Sun");
+            Console.WriteLine(planet4);
+            MannedSpacecraft ship2 = new MannedSpacecraft("Rise", "traveling", 3.7);
+            Console.WriteLine(ship2);
+            ship2.Move(planet2, planet4);
+            ship2.Calc_time(planet2, planet4.Earth_distance);
+            
+            
+            
+            Console.WriteLine();
 
 
         }
