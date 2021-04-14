@@ -28,33 +28,33 @@ namespace OOP_lab5
             Speed = speed;
         }
 
-        public override string ToString() //переопределен метод родительского класса
-        {
-            return this.Type_object + " " + Name + " for " + Use + ". Speed: " + Speed + " au";
-        }
+        //Если точка назначения не планета
+        /* public void Move(Planet a, string destination)
+         {
+             Console.WriteLine("Moving from " + a + "to " + destination);
+         }*/
 
-        public void Move(Planet a, Planet b)
+
+        public void Move(Planet a, Planet b) //реализован метод интерфейса IMoving
         {
-            //Console.WriteLine(" *IMoving");
+            Console.WriteLine(" *IMoving - Move");
             Console.WriteLine("Moving (as a " + this.Type_object + ") - interplanetary flight:");
             Console.WriteLine(a.Name + " ------> " + b.Name);
         }
 
-        //Если точка назначения не планета
-       /* public void Move(Planet a, string destination)
-        {
-            Console.WriteLine("Moving from " + a + "to " + destination);
-        }*/
 
         //Расчет в одну сторону
         public virtual void Calc_time(Planet a, double path)
         {
-            //Console.WriteLine(" *IMoving");
+            Console.WriteLine(" *IMoving - Calc_time");
             Console.Write("Will arrive for research (as a " + this.Type_object + ") in ");
             Console.WriteLine(Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
         }
 
-
+        public override string ToString() //переопределен метод родительского класса
+        {
+            return this.Type_object + " " + Name + " for " + Use + ". Speed: " + Speed + " au";
+        }
 
     }
 }

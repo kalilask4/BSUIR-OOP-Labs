@@ -7,6 +7,10 @@ namespace OOP_lab5
     //реализует 2 интерфейса - IMoving, IPromote
     class MannedSpacecraft : Spacecraft, IMoving, IPromote  //IMoving получен из родительского, здесь указан явно
     {
+        public new string type_object = "MannedSpacecraft";
+
+        public new string Type_object { get => type_object; set => type_object = value; }
+
         public MannedSpacecraft()
         {
         }
@@ -17,14 +21,15 @@ namespace OOP_lab5
 
         public new void Move(Planet a, Planet b) //метод из Imoving, из родительского класса, переопределен
         {
-            Console.WriteLine("Traveling from " + a.Name + " to " + b.Name);
+            Console.WriteLine(" *IMoving - Move");
+            Console.WriteLine("Delivery of tourists and cargo from " + a.Name + " to " + b.Name);
+            Console.WriteLine(a.Name + " ------> " + b.Name);
         }
-
-
 
         public override void Calc_time(Planet a, double path)  //склеивание - метод из двух интерфейсов реализован 1 раз
          {
-             Console.WriteLine("Travel time will take " + Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
+            Console.WriteLine(" *склеивание");
+            Console.WriteLine("Travel time will take " + Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
          }
 
         void IPromote.Calc_time(Planet a, double path) //кастинг
@@ -43,6 +48,10 @@ namespace OOP_lab5
             throw new NotImplementedException();
         }
 
+        public override string ToString() //переопределен метод родительского класса
+        {
+            return this.Type_object + " " + Name + " for " + Use + ". Speed: " + Speed + " au";
+        }
 
 
 

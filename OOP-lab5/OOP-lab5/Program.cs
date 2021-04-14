@@ -18,20 +18,30 @@ namespace OOP_lab5
             Console.WriteLine(planet3);
             Console.WriteLine();
 
-            Console.WriteLine("--------------------------------------------------------"); 
+            Console.WriteLine("------------------------------------------------------------"); 
             Spacecraft probe1 = new Spacecraft("Voyager", "planets exploration", 1.2);
             Console.WriteLine(probe1);
             probe1.Move(planet2, planet1);
             probe1.Calc_time(planet2, planet1.Earth_distance);
-
             Console.WriteLine();
+            
+            Console.WriteLine("------------------------------------------------------------");           
             MannedSpacecraft ship1 = new MannedSpacecraft("Starship", "traveling", 0.7);
             Console.WriteLine(ship1);
             ship1.Move(planet2, planet3);
             ship1.Calc_time(planet2, planet1.Earth_distance);
-
-
+            Console.WriteLine();
             
+            Console.WriteLine("------------------------------------------------------------");
+            //Демонстрация работы объекта, переданного по ссылке в родительский
+            Spacecraft shuttle1 = new MannedSpacecraft("Hope", "delivery", 1.1);
+            Console.WriteLine(shuttle1); //ToString as MannedSpacecraft (child)
+            Console.WriteLine(shuttle1.Type_object); //Type - Spacecraft (base)
+            shuttle1.Move(planet3, planet2); //Move as a Spacecraft (base)
+            shuttle1.Calc_time(planet3, planet2.Earth_distance);
+            Console.WriteLine();
+
+            Console.WriteLine("------------------------------------------------------------");
 
 
 
