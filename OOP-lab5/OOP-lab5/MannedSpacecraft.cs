@@ -31,7 +31,7 @@ namespace OOP_lab5
          {
             //Console.WriteLine(" *склеивание");
             Console.Write("The way back and forth (--as " + this.Type_object + "--). ");
-            Console.WriteLine("Travel time will take ()" + Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
+            Console.WriteLine("Travel time will take ()" + Math.Round(((2*a.Earth_distance + path) / this.Speed), 2) + " years");
          }
 
         void IPromote.Calc_time(Planet a, double path) //кастинг

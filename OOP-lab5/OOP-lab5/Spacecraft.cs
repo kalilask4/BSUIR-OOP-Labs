@@ -48,7 +48,7 @@ namespace OOP_lab5
         {
             Console.WriteLine(" *IMoving - Calc_time");
             Console.Write("Will arrive for research (--as a " + this.Type_object + "--) in ");
-            Console.WriteLine(Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
+            Console.WriteLine(Math.Round(((a.Earth_distance + path) / this.Speed), 2) + " years");
         }
 
         public override string ToString() //переопределен метод родительского класса
