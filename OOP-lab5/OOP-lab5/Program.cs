@@ -33,12 +33,12 @@ namespace OOP_lab5
             Console.WriteLine();
             
             Console.WriteLine("------------------------------------------------------------");
-            //Демонстрация работы объекта, переданного по ссылке в родительский
+            //Тест работы объекта, переданного по ссылке в родительский
             Spacecraft shuttle1 = new MannedSpacecraft("Hope", "delivery", 1.1);
-            Console.WriteLine(shuttle1); //ToString as MannedSpacecraft (child)
-            Console.WriteLine(shuttle1.Type_object); //Type - Spacecraft (base)
-            shuttle1.Move(planet3, planet2); //Move as a Spacecraft (base)
-            shuttle1.Calc_time(planet3, planet2.Earth_distance);
+            Console.WriteLine(shuttle1); //ToString из дочернего - as MannedSpacecraft (child)
+            Console.WriteLine(shuttle1.Type_object); //Свойство Type_object из базового - Spacecraft (base)
+            shuttle1.Move(planet3, planet2); //Move из базового - as a Spacecraft (base)
+            shuttle1.Calc_time(planet3, planet2.Earth_distance); //Calc_time из дочернего (был переопределен - as MannedSpacecraft (child)
             Console.WriteLine();
 
             Console.WriteLine("------------------------------------------------------------");

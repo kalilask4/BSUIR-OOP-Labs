@@ -37,9 +37,9 @@ namespace OOP_lab5
 
         public void Move(Planet a, Planet b) //реализован метод интерфейса IMoving
         {
-            Console.WriteLine(" *IMoving - Move");
-            Console.WriteLine("Moving (as a " + this.Type_object + ") - interplanetary flight:");
-            Console.WriteLine(a.Name + " ------> " + b.Name);
+            Console.WriteLine(" *IMoving - Move as a Spacecraft");
+            Console.Write("Moving (--as a " + this.Type_object + "--) - interplanetary flight: ");
+            Console.WriteLine(a.Name + " ---> " + b.Name);
         }
 
 
@@ -47,7 +47,7 @@ namespace OOP_lab5
         public virtual void Calc_time(Planet a, double path)
         {
             Console.WriteLine(" *IMoving - Calc_time");
-            Console.Write("Will arrive for research (as a " + this.Type_object + ") in ");
+            Console.Write("Will arrive for research (--as a " + this.Type_object + "--) in ");
             Console.WriteLine(Math.Round((a.Earth_distance + path / this.Speed), 2) + " years");
         }
 
