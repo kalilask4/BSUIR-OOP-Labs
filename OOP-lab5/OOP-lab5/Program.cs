@@ -54,7 +54,8 @@ namespace OOP_lab5
             ((IPromote)ship2).Calc_time(planet2, planet4.Earth_distance);
             ((IMoving)ship2).Calc_time(planet2, planet4.Earth_distance);
             //Wrapping
-            ship2.MSpacecraftIpromoteCalc_time(planet2, planet4.Earth_distance);
+            ship2.MSpacecraftIPromoteCalc_time(planet2, planet4.Earth_distance);
+            ship2.MSpacecraftIMovingCalc_time(planet2, planet4.Earth_distance);
 
             //Метод изменяющий поля обекта
             Console.WriteLine("Count tickets: " + planet4.Count_tickets);
