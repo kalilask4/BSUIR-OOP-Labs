@@ -5,7 +5,7 @@ using System.Text;
 namespace OOP_lab5
 {
     //реализует 2 интерфейса - IMoving, IPromote
-    class MannedSpacecraft : Spacecraft, IMoving, IPromote  //IMoving получен из родительского, но нужно явно указывать
+    class MannedSpacecraft : Spacecraft, IMoving, IPromote, IComparable  //IMoving получен из родительского, но нужно явно указывать
     {
         public new string type_object = "MannedSpacecraft";
 
@@ -69,8 +69,10 @@ namespace OOP_lab5
             return this.Type_object + " " + Name + " for " + Use + ". Speed: " + Speed + " au";
         }
 
-
-
-
+        public int CompareTo(object obj)
+        {
+            //return this.Name.CompareTo(((Spacecraft) obj).Name);
+            return Name.CompareTo(((Spacecraft)obj).Name);
+        }
     }
 }
