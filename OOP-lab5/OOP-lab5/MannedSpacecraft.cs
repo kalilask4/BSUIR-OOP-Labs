@@ -36,12 +36,19 @@ namespace OOP_lab5
 
         void IPromote.Calc_time(Planet a, double path) //кастинг
         {
-            Console.WriteLine("(IPromote) Add: Choose our's trip! It takes " + Math.Round(((a.Earth_distance + path) / this.Speed), 2) + " years");
+            Console.WriteLine("(IPromote) Add: Choose our's trip! It only takes " + Math.Round(((a.Earth_distance + path) / this.Speed), 2) + " years");
         }
 
         void IMoving.Calc_time(Planet a, double path) //кастинг
         {
             Console.WriteLine("(IMoving) Travel time will take " + Math.Round(((a.Earth_distance + 2*path) / this.Speed), 2) + " years");
+        }
+
+        public void MSpacecraftIpromoteCalc_time(Planet a, double path) //обертывание
+        {
+            Console.WriteLine("Wrapping");
+            ((IPromote)this).Calc_time(a, path);
+
         }
 
 
