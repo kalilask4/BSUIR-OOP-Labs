@@ -69,10 +69,12 @@ namespace OOP_lab5
             IMoving[] astronomicalobjects = new IMoving[4]
             {
                 //new Planet("GJ 504b", 57, "Unknown", "GJ 504"),
+                new MannedSpacecraft("Theseus", "exploration Rorschach", 5.7),
                 new Spacecraft("Big deal", "planets exploration", 1.5),
-                new Spacecraft("Maelstrom", "planets exploration", 1.01),
                 new MannedSpacecraft("Shore", "delivery", 1.1),
-                new MannedSpacecraft("Theseus", "exploration Rorschach", 5.7)
+                new Spacecraft("Maelstrom", "planets exploration", 1.01)               
+ 
+
             };
 
             foreach (IMoving obj in astronomicalobjects)
@@ -90,18 +92,24 @@ namespace OOP_lab5
                 }
             }
 
+            //test compare
+            //Console.WriteLine(((Spacecraft)astronomicalobjects[1]).Name.CompareTo(((Spacecraft)astronomicalobjects[2]).Name));
+
+
+            Console.WriteLine("------Before sort-----");
             foreach (IMoving obj in astronomicalobjects)
             {
                 Console.WriteLine(((Spacecraft)obj).Name);
             }
-
-
-            //Array.Sort(astronomicalobjects);
-            //test compare
-            Console.WriteLine(((Spacecraft)astronomicalobjects[1]).Name.CompareTo(((Spacecraft)astronomicalobjects[2]).Name));
-
+           
+ 
             
-            
+            Array.Sort(astronomicalobjects);
+            Console.WriteLine("------After sort-----");
+            foreach (IMoving obj in astronomicalobjects)
+            {
+                Console.WriteLine(((Spacecraft)obj).Name);
+            }
 
 
             Console.WriteLine();

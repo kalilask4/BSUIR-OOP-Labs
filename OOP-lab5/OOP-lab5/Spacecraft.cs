@@ -5,7 +5,7 @@ using System.Text;
 namespace OOP_lab5
 {
     //реализует 1 интерфейс - Imoving
-    class Spacecraft : IMoving
+    class Spacecraft : IMoving, IComparable
     {
         string name;
         string use;
@@ -56,5 +56,11 @@ namespace OOP_lab5
             return this.Type_object + " " + Name + " for " + Use + ". Speed: " + Speed + " au";
         }
 
+        public int CompareTo(object obj)
+        {
+            return ((Spacecraft)this).Name.CompareTo(((Spacecraft)obj).Name);
+            // if (((Spacecraft)obj).Name <)
+
+        }
     }
 }
