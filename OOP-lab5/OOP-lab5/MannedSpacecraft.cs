@@ -9,15 +9,19 @@ namespace OOP_lab5
     {
         public new string type_object = "MannedSpacecraft";
 
+
         public new string Type_object { get => type_object; set => type_object = value; }
+
 
         public MannedSpacecraft()
         {
         }
 
+
         public MannedSpacecraft(string name, string use, double speed) : base(name, use, speed)
         {
         }
+
 
         public new void Move(Planet a, Planet b) //метод из Imoving, из родительского класса, переопределен
         {
@@ -25,6 +29,7 @@ namespace OOP_lab5
             //Console.Write("Moving (--as a " + this.Type_object + "--).");
             Console.WriteLine("Delivery of tourists and cargo: from " + a.Name + " --> " + b.Name);  
         }
+
 
         public override void Calc_time(Planet a, double path)  //склеивание - метод из двух интерфейсов реализован 1 раз
          {
@@ -34,15 +39,18 @@ namespace OOP_lab5
             Console.WriteLine("Travel time will take " + Math.Round(((a.Earth_distance + 2*path) / this.Speed), 2) + " years");
          }
 
+
         void IPromote.Calc_time(Planet a, double path) //кастинг
         {
             Console.WriteLine("(IPromote) Add: Choose our's trip! It only takes " + Math.Round(((a.Earth_distance + path) / this.Speed), 2) + " years");
         }
 
+
         void IMoving.Calc_time(Planet a, double path) //кастинг
         {
             Console.WriteLine("(IMoving) Travel time will take " + Math.Round(((a.Earth_distance + 2*path) / this.Speed), 2) + " years");
         }
+
 
         public void MSpacecraftIPromoteCalc_time(Planet a, double path) //обертывание
         {
@@ -50,6 +58,7 @@ namespace OOP_lab5
             ((IPromote)this).Calc_time(a, path);
 
         }
+
 
         public void MSpacecraftIMovingCalc_time(Planet a, double path) //обертывание
         {
@@ -64,16 +73,10 @@ namespace OOP_lab5
             Console.Write("Left with " + this + "place(es)");
         }
 
+
         public override string ToString() //переопределен метод родительского класса
         {
             return this.Type_object + " " + Name + " for " + Use + ". Speed: " + Speed + " au";
         }
-        /*
-        public int CompareTo(object obj)
-        {
-            return ((Spacecraft)this).Name.CompareTo(((Spacecraft)obj).Name);
-           // if (((Spacecraft)obj).Name <)
-            
-        }*/
     }
 }

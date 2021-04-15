@@ -8,6 +8,6 @@ namespace OOP_lab5
     {
         public void Sell(int count_tickets);
         public void Calc_time(Planet a, double path); // коллизия имен при имплементации обоих интерфейсов
-        //public void Upgrade(); - метод, который изменяет числовые поля объекта
+        //public void Upgrade(); - метод, который изменяет числовые поля объекта можно доработать
     }
 }

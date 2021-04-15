@@ -12,10 +12,12 @@ namespace OOP_lab5
         double speed; //расчет скоростей и расстояний упрощен. а.е
         public string type_object = "Spacecraft";
 
+
         public string Name { get => name; set => name = value; }
         public string Use { get => use; set => use = value; }
         public double Speed { get => speed; set => speed = value; }
         public string Type_object { get => type_object; set => type_object = value; }
+
 
         public Spacecraft()
         {
@@ -28,13 +30,7 @@ namespace OOP_lab5
             Speed = speed;
         }
 
-        //Если точка назначения не планета
-        /* public void Move(Planet a, string destination)
-         {
-             Console.WriteLine("Moving from " + a + "to " + destination);
-         }*/
-
-
+ 
         public void Move(Planet a, Planet b) //реализован метод интерфейса IMoving
         {
             Console.WriteLine(" *IMoving - Move as a Spacecraft");
@@ -56,11 +52,10 @@ namespace OOP_lab5
             return this.Type_object + " " + Name + " for " + Use + ". Speed: " + Speed + " au";
         }
 
+
         public int CompareTo(object obj)
         {
             return ((Spacecraft)this).Name.CompareTo(((Spacecraft)obj).Name);
-            // if (((Spacecraft)obj).Name <)
-
         }
     }
 }

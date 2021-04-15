@@ -64,17 +64,13 @@ namespace OOP_lab5
             planet4.Sell(5);
             Console.WriteLine("Count tickets: " + planet4.Count_tickets);
 
-            //Работа с массивом
             Console.WriteLine("------------------------------------------------------------");
             IMoving[] astronomicalobjects = new IMoving[4]
             {
-                //new Planet("GJ 504b", 57, "Unknown", "GJ 504"),
                 new MannedSpacecraft("Theseus", "exploration Rorschach", 5.7),
                 new Spacecraft("Big deal", "planets exploration", 1.5),
                 new MannedSpacecraft("Shore", "delivery", 1.1),
                 new Spacecraft("Maelstrom", "planets exploration", 1.01)               
- 
-
             };
 
             foreach (IMoving obj in astronomicalobjects)
@@ -87,22 +83,17 @@ namespace OOP_lab5
                 if (obj is IPromote)
                 {
                     Console.WriteLine(obj);
-                    //((IPromote)obj).Calc_time(planet2, planet4.Earth_distance);
                     (obj as IPromote)?.Calc_time(planet2, planet4.Earth_distance);
                 }
             }
 
             //test compare
             //Console.WriteLine(((Spacecraft)astronomicalobjects[1]).Name.CompareTo(((Spacecraft)astronomicalobjects[2]).Name));
-
-
             Console.WriteLine("------Before sort-----");
             foreach (IMoving obj in astronomicalobjects)
             {
                 Console.WriteLine(((Spacecraft)obj).Name);
             }
-           
- 
             
             Array.Sort(astronomicalobjects);
             Console.WriteLine("------After sort-----");
@@ -111,10 +102,7 @@ namespace OOP_lab5
                 Console.WriteLine(((Spacecraft)obj).Name);
             }
 
-
             Console.WriteLine();
-
-
         }
     }
 }

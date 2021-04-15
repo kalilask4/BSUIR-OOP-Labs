@@ -10,10 +10,11 @@ namespace OOP_lab5
         private double earth_distance;    //расстояние до земли св.л (1пс=3,2 св.года), max=13,035 млрд. св.л.
         string star;
         int count_tickets = 3;
-
-        public double Earth_distance { get => earth_distance; set => earth_distance = value; }
         
+        
+        public double Earth_distance { get => earth_distance; set => earth_distance = value; }
         public int Count_tickets { get => count_tickets; set => count_tickets = value; }
+
 
         public string Star
         {
@@ -25,12 +26,12 @@ namespace OOP_lab5
             }
         }
 
-       
 
         public Planet()
         {
             Type_object = "Planet";
         }
+
 
         public Planet(string name, double earth_distance, string legend, string star) : base(name, legend)
         {
@@ -55,6 +56,7 @@ namespace OOP_lab5
             }
         }
 
+
         public void Calc_time(Planet a, double path)
         {
             Console.WriteLine("(IPromote) Add: Choose our's trip! It takes " + path);
@@ -65,6 +67,5 @@ namespace OOP_lab5
         {
             return  this.Type_object + " name: " + Name + ". Star - " + Star + ". "+ Legend;
         }
-
     }
 }
