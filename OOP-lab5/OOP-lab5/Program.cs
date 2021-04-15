@@ -90,18 +90,19 @@ namespace OOP_lab5
                 }
             }
 
-            Console.WriteLine("----Before sort----------------------------------------------");
             foreach (IMoving obj in astronomicalobjects)
             {
-                Console.WriteLine((Spacecraft)obj);
+                Console.WriteLine(((Spacecraft)obj).Name);
             }
-            Console.WriteLine("-----After sort----------------------------------------------");
-            
+
+
             //Array.Sort(astronomicalobjects);
-            foreach (IMoving obj in astronomicalobjects)
-            {
-                Console.WriteLine(obj);
-            }
+            //test compare
+            Console.WriteLine(((Spacecraft)astronomicalobjects[1]).Name.CompareTo(((Spacecraft)astronomicalobjects[2]).Name));
+
+            
+            
+
 
             Console.WriteLine();
 
