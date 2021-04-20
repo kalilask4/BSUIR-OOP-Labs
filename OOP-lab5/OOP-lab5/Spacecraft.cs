@@ -60,6 +60,4 @@ namespace OOP_lab5
         }
     }
 
-   
-
 }

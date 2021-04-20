@@ -103,12 +103,9 @@ namespace OOP_lab5
                 Console.WriteLine(((Spacecraft)obj).Name);
             }
 
-            
-            
+            Console.WriteLine("------------------------------------------------------------");
             Console.WriteLine();
-            Console.WriteLine("Sort whith Comarer");
             Console.WriteLine("------Before sort whith Comarer-----");
-
             
             Planet[] planets = new Planet[4]
             {
@@ -124,7 +121,6 @@ namespace OOP_lab5
             }
 
             Console.WriteLine("------After sort whith Comarer (by Earth_distance)-----");
-
             Array.Sort(planets, new ComarerPlanetByEarth_distance());
             foreach (Planet planet in planets)
             {
@@ -132,23 +128,11 @@ namespace OOP_lab5
             }
 
             Console.WriteLine("------After sort whith Comarer (by Name)-----");
-
             Array.Sort(planets, new ComarerPlanetByName());
             foreach (Planet planet in planets)
             {
                 Console.WriteLine(planet);
             }
-
-
-            /*
-
-            Array.Sort(astronomicalobjects, new ComarerPlanetByEarth_distance());
-            Console.WriteLine("------After sort-----");
-            foreach (IMoving obj in astronomicalobjects)
-            {
-                Console.WriteLine(((Spacecraft)obj));
-            }
-            */
 
         }
     }

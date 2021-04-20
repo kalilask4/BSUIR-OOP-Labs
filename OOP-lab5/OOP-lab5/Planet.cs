@@ -72,17 +72,6 @@ namespace OOP_lab5
 
     class ComarerPlanetByEarth_distance : IComparer<Planet>
     {
-
-
-        /*public int Compare([AllowNull] Spacecraft x, [AllowNull] Spacecraft y)
-        {
-            if (x.Speed < y.Speed)
-                return -1;
-            if (x.Speed > y.Speed)
-                return 1;
-            return 0;
-
-        }*/
         public int Compare([AllowNull] Planet x, [AllowNull] Planet y)
         {
             if (x.Earth_distance < y.Earth_distance)
@@ -91,10 +80,7 @@ namespace OOP_lab5
                 return 1;
             return 0;
         }
-
-
     }
-
 
 
     class ComarerPlanetByName : IComparer<Planet>
@@ -107,6 +93,5 @@ namespace OOP_lab5
                 return 1;
             return 0;
         }
-
     }
 }
