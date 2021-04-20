@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace OOP_lab5
@@ -58,4 +59,7 @@ namespace OOP_lab5
             return ((Spacecraft)this).Name.CompareTo(((Spacecraft)obj).Name);
         }
     }
+
+   
+
 }

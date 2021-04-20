@@ -89,6 +89,7 @@ namespace OOP_lab5
 
             //test compare
             //Console.WriteLine(((Spacecraft)astronomicalobjects[1]).Name.CompareTo(((Spacecraft)astronomicalobjects[2]).Name));
+            
             Console.WriteLine("------Before sort-----");
             foreach (IMoving obj in astronomicalobjects)
             {
@@ -102,7 +103,46 @@ namespace OOP_lab5
                 Console.WriteLine(((Spacecraft)obj).Name);
             }
 
+            
+            
             Console.WriteLine();
+            Console.WriteLine("Sort whith Comarer");
+            Console.WriteLine("------Before sort whith Comarer-----");
+
+            
+            Planet[] planets = new Planet[4]
+            {
+                planet1,
+                planet2,
+                planet4,
+                planet3
+            };
+
+            foreach (Planet planet in planets)
+            {
+                Console.WriteLine(planet);
+            }
+
+            Console.WriteLine("------After sort whith Comarer (by Earth_distance)-----");
+
+            Array.Sort(planets, new ComarerPlanetByEarth_distance());
+            foreach (Planet planet in planets)
+            {
+                Console.WriteLine(planet);
+            }
+
+            
+
+            /*
+
+            Array.Sort(astronomicalobjects, new ComarerPlanetByEarth_distance());
+            Console.WriteLine("------After sort-----");
+            foreach (IMoving obj in astronomicalobjects)
+            {
+                Console.WriteLine(((Spacecraft)obj));
+            }
+            */
+
         }
     }
 }

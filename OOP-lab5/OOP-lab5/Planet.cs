@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace OOP_lab5
 {
     class Planet : AstronomicalObject, IPromote
     {
-               
+
         private double earth_distance;    //расстояние до земли св.л (1пс=3,2 св.года), max=13,035 млрд. св.л.
         string star;
         int count_tickets = 3;
-        
-        
+
+
         public double Earth_distance { get => earth_distance; set => earth_distance = value; }
         public int Count_tickets { get => count_tickets; set => count_tickets = value; }
 
@@ -43,7 +44,7 @@ namespace OOP_lab5
 
         public void Sell(int count_tickets)
         {
-            if (count_tickets<=this.count_tickets)
+            if (count_tickets <= this.count_tickets)
             {
                 Random rnd = new Random(2453434);
                 int value = rnd.Next();
@@ -65,7 +66,34 @@ namespace OOP_lab5
 
         public override string ToString()
         {
-            return  this.Type_object + " name: " + Name + ". Star - " + Star + ". "+ Legend;
+            return this.Type_object + " name: " + Name + ". Star - " + Star + ". " + Legend;
         }
     }
+
+    class ComarerPlanetByEarth_distance : IComparer<Planet>
+    {
+
+
+        /*public int Compare([AllowNull] Spacecraft x, [AllowNull] Spacecraft y)
+        {
+            if (x.Speed < y.Speed)
+                return -1;
+            if (x.Speed > y.Speed)
+                return 1;
+            return 0;
+
+        }*/
+        public int Compare([AllowNull] Planet x, [AllowNull] Planet y)
+        {
+            if (x.Earth_distance < y.Earth_distance)
+                return -1;
+            if (x.Earth_distance > y.Earth_distance)
+                return 1;
+            return 0;
+        }
+
+
+    }
+
+
 }
