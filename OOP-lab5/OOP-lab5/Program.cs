@@ -105,33 +105,33 @@ namespace OOP_lab5
 
             Console.WriteLine("------------------------------------------------------------");
             Console.WriteLine();
-            Console.WriteLine("------Before sort whith Comarer-----");
+            Console.WriteLine("------Before sort whith Comparer-----");
             
             Planet[] planets = new Planet[4]
             {
-                planet1,
+                planet3,
                 planet2,
                 planet4,
-                planet3
+                planet1
             };
 
             foreach (Planet planet in planets)
             {
-                Console.WriteLine(planet);
+                Console.WriteLine(planet + ". Earth distance " + planet.Earth_distance);
             }
 
-            Console.WriteLine("------After sort whith Comarer (by Earth_distance)-----");
-            Array.Sort(planets, new ComarerPlanetByEarth_distance());
+            Console.WriteLine("------After sort whith Comparer (by Earth_distance)-----");
+            Array.Sort(planets, new ComparerPlanetByEarth_distance());
             foreach (Planet planet in planets)
             {
-                Console.WriteLine(planet);
+                Console.WriteLine(planet + ". Earth distance " + planet.Earth_distance);
             }
 
-            Console.WriteLine("------After sort whith Comarer (by Name)-----");
-            Array.Sort(planets, new ComarerPlanetByName());
+            Console.WriteLine("------After sort whith Comparer (by Name)-----");
+            Array.Sort(planets, new ComparerPlanetByName());
             foreach (Planet planet in planets)
             {
-                Console.WriteLine(planet);
+                Console.WriteLine(planet + ". Earth distance " + planet.Earth_distance);
             }
 
         }

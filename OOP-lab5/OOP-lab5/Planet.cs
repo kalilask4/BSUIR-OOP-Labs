@@ -70,7 +70,7 @@ namespace OOP_lab5
         }
     }
 
-    class ComarerPlanetByEarth_distance : IComparer<Planet>
+    class ComparerPlanetByEarth_distance : IComparer<Planet>
     {
         public int Compare([AllowNull] Planet x, [AllowNull] Planet y)
         {
@@ -83,7 +83,7 @@ namespace OOP_lab5
     }
 
 
-    class ComarerPlanetByName : IComparer<Planet>
+    class ComparerPlanetByName : IComparer<Planet>
     {
         public int Compare([AllowNull] Planet x, [AllowNull] Planet y)
         {
