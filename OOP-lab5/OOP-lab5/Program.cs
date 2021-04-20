@@ -131,7 +131,14 @@ namespace OOP_lab5
                 Console.WriteLine(planet);
             }
 
-            
+            Console.WriteLine("------After sort whith Comarer (by Name)-----");
+
+            Array.Sort(planets, new ComarerPlanetByName());
+            foreach (Planet planet in planets)
+            {
+                Console.WriteLine(planet);
+            }
+
 
             /*
 

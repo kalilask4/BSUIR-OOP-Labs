@@ -96,4 +96,17 @@ namespace OOP_lab5
     }
 
 
+
+    class ComarerPlanetByName : IComparer<Planet>
+    {
+        public int Compare([AllowNull] Planet x, [AllowNull] Planet y)
+        {
+            if (x.Name.Length < y.Name.Length)
+                return -1;
+            if (x.Name.Length > y.Name.Length)
+                return 1;
+            return 0;
+        }
+
+    }
 }
