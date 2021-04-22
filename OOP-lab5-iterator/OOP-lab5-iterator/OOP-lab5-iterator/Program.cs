@@ -8,7 +8,7 @@ namespace OOP_lab5_iterator
         {
             MemberName memberNames = new MemberName();
 
-            foreach (string s in memberNames.MyMemberName(1,5))
+            foreach (string s in memberNames.MyMemberName(2,5))
             {
                 Console.WriteLine(s + " ");
             }

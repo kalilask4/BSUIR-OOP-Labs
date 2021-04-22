@@ -22,7 +22,6 @@ namespace OOP_lab5_iterator
             "Kvladimir",
             "KNadegda",
             "KVitaliy",
-            "11"
         };
 
         public MemberName()
