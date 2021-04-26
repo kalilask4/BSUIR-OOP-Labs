@@ -9,7 +9,7 @@ namespace OOPlaba6
         public string name = "Noname";
         public string type_object = "Indefinite";
         public double earth_mass;    // относительно Земли 1 M⊕ = (5,9722 ± 0,0006) × 1024 кг
-        public double sun_mass;   //относительно массы Солнца
+        public double sun_mass=1;   //относительно массы Солнца
         public double earth_distance;    //расстояние до земли св.л (1пс=3,2 св.года), max=13,035 млрд. св.л.
         public string legend = "Unsafe for humans.";
 
@@ -57,7 +57,7 @@ namespace OOPlaba6
 
         public int CompareTo(object obj)
         {
-            return sun_mass.CompareTo(obj);
+            return this.sun_mass.CompareTo((double)((AstronomicalObject)obj).sun_mass);
         }
     }
 }
