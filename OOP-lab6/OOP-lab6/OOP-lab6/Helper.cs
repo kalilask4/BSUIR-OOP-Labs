@@ -32,10 +32,10 @@ namespace OOP_lab6
                 int otvet = Convert.ToInt32(Console.ReadLine());
                 switch (otvet)
                 {
-                    case 1: method1(arrayList); break;
-                   /* case 2: method2(arrayList); break;
-                    case 3: method3(arrayList); break;
-                    case 4: method4(arrayList); break;
+                    case 1: show(arrayList); break;
+                    case 2: add(arrayList); break;
+                    /*case 3: method3(arrayList); break;
+                   case 4: method4(arrayList); break;
                     case 5: method5(arrayList); break;
                     case 6: method6(arrayList); break;
                     case 7: method7(arrayList); break;
@@ -52,10 +52,46 @@ namespace OOP_lab6
         }
 
 
-        public static void method1(ArrayList arrayList)
+        public static void show(ArrayList arrayList)
         {
-            Console.WriteLine("11111");
+            foreach (object obj in arrayList)
+            {
+                Console.WriteLine((obj as Star)?.ToString());
+            }
+            Console.ReadKey();
+            
         }
+
+
+
+        public static void add(ArrayList arrayList)
+        {
+            Console.WriteLine("Добавляем Star(1) или NeutronStar(2)?");
+            string answer = Console.ReadLine();
+            int n;
+            if (!Int32.TryParse(answer, out n) || n < 1 || n > 2)
+                return;
+            Console.Write("name: ");
+            string name = Console.ReadLine();
+            Console.Write("temperature_K: ");
+            double temperature_K = double.Parse(Console.ReadLine()); 
+            Console.Write("sun_mass: ");
+            double sun_mass = double.Parse(Console.ReadLine());
+            switch (n)
+            {
+                case 1:
+                    arrayList.Add(new Star(name, temperature_K, sun_mass));
+                    break;
+                case 2:
+                    arrayList.Add(new NeutronStar(name, temperature_K, sun_mass));
+                    break;
+            }
+        }
+
+       
+
+
+
 
 
         public static void imitate_loading(string str)
@@ -64,7 +100,6 @@ namespace OOP_lab6
             Console.Write("\n");
             Thread.Sleep(50);
             Console.Write(".");
-            //Console.Write("\n.");
             Thread.Sleep(50);
             Console.Write("...");
             Thread.Sleep(50);
@@ -74,14 +109,10 @@ namespace OOP_lab6
             Thread.Sleep(50);
             Console.Write("..");
             Thread.Sleep(100);
-            Console.Write("........");
-            Thread.Sleep(200);
             Console.Write("...");
             Thread.Sleep(100);
             Console.Write("....");
             Thread.Sleep(50);
-            Console.Write("........");
-            Thread.Sleep(100);
             Console.Write("...");
             Thread.Sleep(200);
             Console.Write(".");
@@ -100,12 +131,6 @@ namespace OOP_lab6
             Thread.Sleep(50);
             Console.Write("...............");
             Thread.Sleep(100);
-            Console.Write(".");
-            Thread.Sleep(10);
-            Console.Write(".");
-            Thread.Sleep(10);
-            Console.Write(".");
-            Thread.Sleep(10);
             Console.Write(".");
             Thread.Sleep(10);
             Console.Write(".");

@@ -25,6 +25,14 @@ namespace OOP_lab6
             Sun_mass_before_explosion = sun_mass_before_explosion;
         }
 
+        public NeutronStar(string name, double temperature_K, double sun_mass)
+        {
+            Name = name;
+            Type_object = "Neutron Star";
+            Temperature_K = temperature_K;
+            Sun_mass = sun_mass;
+        }
+
         public override void print_description(string additional_description = "")
         {
             Console.WriteLine("A neutron star is the collapsed core of a massive supergiant star, \n" +

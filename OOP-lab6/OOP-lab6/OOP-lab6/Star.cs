@@ -42,7 +42,7 @@ namespace OOP_lab6
         }
 
         
-        public override void print_description(string additional_description="") //переопределение метода, у класса Asteroid не будет переопределен
+        public override void print_description(string additional_description="") 
         {
             Console.WriteLine("An astronomical object consisting of a luminous spheroid of plasma held own gravity.\n" +
                 Type_object + " " + Name + " has temperature " + Temperature_K

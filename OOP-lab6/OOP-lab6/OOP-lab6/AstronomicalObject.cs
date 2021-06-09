@@ -45,7 +45,7 @@ namespace OOPlaba6
             
         }        
 
-        public double calculate_base_pathtime() //доработать, если буду работать с этой прогой: расчет времени пути до земли (базовая скорость из константы BASESPEED)
+        public double calculate_base_pathtime() 
         {
             return 0;
         }
@@ -58,6 +58,11 @@ namespace OOPlaba6
         public int CompareTo(object obj)
         {
             return this.sun_mass.CompareTo((double)((AstronomicalObject)obj).sun_mass);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return ((obj as AstronomicalObject).name ?? "") == name;
         }
     }
 }
