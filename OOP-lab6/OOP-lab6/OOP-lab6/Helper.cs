@@ -34,13 +34,14 @@ namespace OOP_lab6
                 {
                     case 1: show(arrayList); break;
                     case 2: add(arrayList); break;
-                    /*case 3: method3(arrayList); break;
-                   case 4: method4(arrayList); break;
-                    case 5: method5(arrayList); break;
-                    case 6: method6(arrayList); break;
-                    case 7: method7(arrayList); break;
-                    case 8: method8(arrayList); break;
-                    case 9: method9(arrayList); break;*/
+                    case 3: insert(arrayList); break;
+                    /* case 4: method4(arrayList); break;
+                     case 5: method5(arrayList); break;
+                     case 6: method6(arrayList); break;
+                     case 7: method7(arrayList); break;
+                     case 8: method8(arrayList); break;
+                     case 9: method9(arrayList); break;*/
+                    case 0: return;                       
                     default: return;
                 }
 
@@ -88,7 +89,38 @@ namespace OOP_lab6
             }
         }
 
-       
+        public static void insert(ArrayList arrayList)
+        {
+            Console.Write("индекс: ");
+            string answer = Console.ReadLine();
+            int n;
+            if (!Int32.TryParse(answer, out n)); 
+            if (n < 0 || n > arrayList.Count)
+            {
+                Console.WriteLine("Неверный индекс");
+                return;
+            }
+            Console.WriteLine("Добавляем Star(1) или NeutronStar(2)?");
+            string answ = Console.ReadLine();
+            int i;
+            if (!Int32.TryParse(answ, out i) || i < 1 || i > 2)
+                return;
+            Console.Write("name: ");
+            string name = Console.ReadLine();
+            Console.Write("temperature_K: ");
+            double temperature_K = double.Parse(Console.ReadLine());
+            Console.Write("sun_mass: ");
+            double sun_mass = double.Parse(Console.ReadLine());
+            switch (n)
+            {
+                case 1:
+                    arrayList.Insert(n, new Star(name, temperature_K, sun_mass));
+                    break;
+                case 2:
+                    arrayList.Insert(n, new NeutronStar(name, temperature_K, sun_mass));
+                    break;
+            }
+        }
 
 
 
