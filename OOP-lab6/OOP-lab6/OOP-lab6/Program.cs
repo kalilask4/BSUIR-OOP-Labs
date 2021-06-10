@@ -45,6 +45,7 @@ namespace OOP_lab6
             astrObjects.Add(neutronStar1);
             astrObjects.Add(new Star("Four", 23, 1.1));
             astrObjects.Add(star1);
+            astrObjects.Add(new Star("Ann", 1, 1.3));
 
 
 

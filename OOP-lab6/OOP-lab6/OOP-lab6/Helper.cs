@@ -39,8 +39,8 @@ namespace OOP_lab6
                     case 5: find_end(arrayList); break;
                     case 6: del(arrayList); break;
                     case 7: del_on_value(arrayList); break;
-                     /*case 8: method8(arrayList); break;
-                     case 9: method9(arrayList); break;*/
+                    case 8: revers(arrayList); break;
+                    case 9: sort(arrayList); break;
                     case 0: return;                       
                     default: return;
                 }
@@ -171,6 +171,18 @@ namespace OOP_lab6
             Console.WriteLine("Элемент удален (возможно)");
             show(arrayList);
 
+        }
+
+        public static void revers(ArrayList arrayList)
+        {
+            arrayList.Reverse();
+            show(arrayList);
+        }       
+        
+        public static void sort(ArrayList arrayList)
+        {
+            arrayList.Reverse();
+            show(arrayList);
         }
 
 
