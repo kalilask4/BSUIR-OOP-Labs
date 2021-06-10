@@ -36,8 +36,8 @@ namespace OOP_lab6
                     case 2: add(arrayList); break;
                     case 3: insert(arrayList); break;
                     case 4: find_start(arrayList); break;
-                    /* case 5: method5(arrayList); break;
-                     case 6: method6(arrayList); break;
+                    case 5: find_end(arrayList); break;
+                    /* case 6: method6(arrayList); break;
                      case 7: method7(arrayList); break;
                      case 8: method8(arrayList); break;
                      case 9: method9(arrayList); break;*/
@@ -130,9 +130,15 @@ namespace OOP_lab6
             Star star = new Star(name);
             int index = arrayList.IndexOf(star);
             Console.WriteLine(index > -1 ? $"\nИндекс = {index}; {arrayList[index]}" : "Элемент не найден");
+        }
 
-
-
+        public static void find_end(ArrayList arrayList)
+        {
+            Console.Write("name: ");
+            string name = Console.ReadLine();
+            Star star = new Star(name);
+            int index = arrayList.LastIndexOf(star);
+            Console.WriteLine(index > -1 ? $"\nИндекс = {index}; {arrayList[index]}" : "Элемент не найден");
         }
 
 
