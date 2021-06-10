@@ -38,8 +38,8 @@ namespace OOP_lab6
                     case 4: find_start(arrayList); break;
                     case 5: find_end(arrayList); break;
                     case 6: del(arrayList); break;
-                    /* case 7: method7(arrayList); break;
-                     case 8: method8(arrayList); break;
+                    case 7: del_value(arrayList); break;
+                     /*case 8: method8(arrayList); break;
                      case 9: method9(arrayList); break;*/
                     case 0: return;                       
                     default: return;
@@ -157,6 +157,18 @@ namespace OOP_lab6
             }
             arrayList.RemoveAt(n);
             Console.WriteLine("Элемент удален");
+            show(arrayList);
+
+        }
+
+        public static void del_value(ArrayList arrayList)
+        {
+
+            Console.Write("name: ");
+            string name = Console.ReadLine();
+            Star star = new Star(name);
+            arrayList.Remove(star);
+            Console.WriteLine("Элемент удален (возможно)");
             show(arrayList);
 
         }
