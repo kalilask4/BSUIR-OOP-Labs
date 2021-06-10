@@ -37,8 +37,8 @@ namespace OOP_lab6
                     case 3: insert(arrayList); break;
                     case 4: find_start(arrayList); break;
                     case 5: find_end(arrayList); break;
-                    /* case 6: method6(arrayList); break;
-                     case 7: method7(arrayList); break;
+                    case 6: del(arrayList); break;
+                    /* case 7: method7(arrayList); break;
                      case 8: method8(arrayList); break;
                      case 9: method9(arrayList); break;*/
                     case 0: return;                       
@@ -141,6 +141,25 @@ namespace OOP_lab6
             Console.WriteLine(index > -1 ? $"\nИндекс = {index}; {arrayList[index]}" : "Элемент не найден");
         }
 
+
+
+        public static void del(ArrayList arrayList)
+        {
+            Console.Write("индекс: ");
+            string answer = Console.ReadLine();
+            int n;
+            if (!Int32.TryParse(answer, out n))
+                return;
+            if (n < 0 || n > arrayList.Count)
+            {
+                Console.WriteLine("Неверный индекс");
+                return;
+            }
+            arrayList.RemoveAt(n);
+            Console.WriteLine("Элемент удален");
+            show(arrayList);
+
+        }
 
 
         public static void imitate_loading(string str)
