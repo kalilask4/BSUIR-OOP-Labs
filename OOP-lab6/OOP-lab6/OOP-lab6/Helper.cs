@@ -38,7 +38,7 @@ namespace OOP_lab6
                     case 4: find_start(arrayList); break;
                     case 5: find_end(arrayList); break;
                     case 6: del(arrayList); break;
-                    case 7: del_value(arrayList); break;
+                    case 7: del_on_value(arrayList); break;
                      /*case 8: method8(arrayList); break;
                      case 9: method9(arrayList); break;*/
                     case 0: return;                       
@@ -161,7 +161,7 @@ namespace OOP_lab6
 
         }
 
-        public static void del_value(ArrayList arrayList)
+        public static void del_on_value(ArrayList arrayList)
         {
 
             Console.Write("name: ");
