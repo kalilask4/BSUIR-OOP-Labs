@@ -35,7 +35,7 @@ namespace OOP_lab6
                     case 1: show(arrayList); break;
                     case 2: add(arrayList); break;
                     case 3: insert(arrayList); break;
-                    /* case 4: method4(arrayList); break;
+                    /*case 4: method5(arrayList); break;
                      case 5: method5(arrayList); break;
                      case 6: method6(arrayList); break;
                      case 7: method7(arrayList); break;
@@ -94,7 +94,8 @@ namespace OOP_lab6
             Console.Write("индекс: ");
             string answer = Console.ReadLine();
             int n;
-            if (!Int32.TryParse(answer, out n)); 
+            if (!Int32.TryParse(answer, out n))
+                return; 
             if (n < 0 || n > arrayList.Count)
             {
                 Console.WriteLine("Неверный индекс");
