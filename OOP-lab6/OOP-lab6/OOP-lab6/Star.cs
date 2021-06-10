@@ -26,6 +26,12 @@ namespace OOP_lab6
             Type_object = "Star";
         }
 
+        public Star(string name) : base(name)
+        {
+            Type_object = "Star";
+        }
+
+
         public Star(string name, double temperature_K, double sun_mass): base(name)
         {
             Type_object = "Star";
