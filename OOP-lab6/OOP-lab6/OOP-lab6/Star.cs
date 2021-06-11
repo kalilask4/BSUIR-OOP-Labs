@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OOP_lab6
 {
-    class Star : AstronomicalObject
+    class Star : AstronomicalObject, Iglowing
     {
         public double temperature_K; //средняя температура в Кельвинах
          
@@ -53,6 +53,19 @@ namespace OOP_lab6
             Console.WriteLine("An astronomical object consisting of a luminous spheroid of plasma held own gravity.\n" +
                 Type_object + " " + Name + " has temperature " + Temperature_K
                 + " K. " + additional_description ); 
+        }
+
+        public void Glove()
+        {
+            Console.WriteLine("         *");
+            Console.WriteLine("  *     ");
+            Console.WriteLine("                *");
+            Console.WriteLine("*           ");
+            Console.WriteLine("        .        *");
+            Console.WriteLine("*        ");
+            Console.WriteLine("                *");
+            Console.WriteLine("  *            ");
+            Console.WriteLine("         *");
         }
     }
 }

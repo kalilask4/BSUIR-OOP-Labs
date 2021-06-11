@@ -1,10 +1,11 @@
-﻿using System;
+﻿using OOPlaba6;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace OOP_lab6
 {
-    class NeutronStar: Star
+    class NeutronStar: Star, Iglowing
     {
         private double sun_mass_before_explosion;
 
@@ -39,5 +40,19 @@ namespace OOP_lab6
                 "which had a total mass of between 10 and 25 solar masses. \n" + additional_description);
         }
 
+        public void Glove()
+        {
+            Console.WriteLine("        ");
+            Console.WriteLine("        ");
+            Console.WriteLine("        *");
+            Console.WriteLine("   **   *    **");
+            Console.WriteLine(" **     .      **");
+            Console.WriteLine("**     ***      ** ");
+            Console.WriteLine("**    *****     **");
+            Console.WriteLine("**     ***      **");
+            Console.WriteLine(" **     .      **");
+            Console.WriteLine("   **   *    **");
+            Console.WriteLine("        *");
+        }                     
     }
 }
