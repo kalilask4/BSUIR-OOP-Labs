@@ -10,7 +10,6 @@ namespace OOP_lab6
 {
     class Helper
     {
-
         public static void launch_menu(ArrayList arrayList)
         {
             while (true)
@@ -32,29 +31,23 @@ namespace OOP_lab6
                 int otvet = Convert.ToInt32(Console.ReadLine());
                 switch (otvet)
                 {
-                    case 1: show(arrayList); break;
-                    case 2: add(arrayList); break;
-                    case 3: insert(arrayList); break;
-                    case 4: find_start(arrayList); break;
-                    case 5: find_end(arrayList); break;
-                    case 6: del(arrayList); break;
-                    case 7: del_on_value(arrayList); break;
-                    case 8: revers(arrayList); break;
-                    case 9: sort(arrayList); break;
-                    case 10: glove(arrayList); break;
+                    case 1: Show(arrayList); break;
+                    case 2: Add(arrayList); break;
+                    case 3: Insert(arrayList); break;
+                    case 4: Find_start(arrayList); break;
+                    case 5: Find_end(arrayList); break;
+                    case 6: Del(arrayList); break;
+                    case 7: Del_on_value(arrayList); break;
+                    case 8: Revers(arrayList); break;
+                    case 9: Sort(arrayList); break;
+                    case 10: Glove(arrayList); break;
                     case 0: return;                       
                     default: return;
                 }
-
-                
-
             }
-
-            
         }
 
-
-        public static void show(ArrayList arrayList)
+        public static void Show(ArrayList arrayList)
         {
             foreach (object obj in arrayList)
             {
@@ -64,9 +57,7 @@ namespace OOP_lab6
             
         }
 
-
-
-        public static void add(ArrayList arrayList)
+        public static void Add(ArrayList arrayList)
         {
             Console.WriteLine("Добавляем Star(1) или NeutronStar(2)?");
             string answer = Console.ReadLine();
@@ -90,7 +81,7 @@ namespace OOP_lab6
             }
         }
 
-        public static void insert(ArrayList arrayList)
+        public static void Insert(ArrayList arrayList)
         {
             Console.Write("индекс: ");
             string answer = Console.ReadLine();
@@ -124,7 +115,7 @@ namespace OOP_lab6
             }
         }
 
-        public static void find_start(ArrayList arrayList)
+        public static void Find_start(ArrayList arrayList)
         {
             Console.Write("name: ");
             string name = Console.ReadLine();
@@ -133,7 +124,7 @@ namespace OOP_lab6
             Console.WriteLine(index > -1 ? $"\nИндекс = {index}; {arrayList[index]}" : "Элемент не найден");
         }
 
-        public static void find_end(ArrayList arrayList)
+        public static void Find_end(ArrayList arrayList)
         {
             Console.Write("name: ");
             string name = Console.ReadLine();
@@ -142,9 +133,7 @@ namespace OOP_lab6
             Console.WriteLine(index > -1 ? $"\nИндекс = {index}; {arrayList[index]}" : "Элемент не найден");
         }
 
-
-
-        public static void del(ArrayList arrayList)
+        public static void Del(ArrayList arrayList)
         {
             Console.Write("индекс: ");
             string answer = Console.ReadLine();
@@ -158,11 +147,11 @@ namespace OOP_lab6
             }
             arrayList.RemoveAt(n);
             Console.WriteLine("Элемент удален");
-            show(arrayList);
+            Show(arrayList);
 
         }
 
-        public static void del_on_value(ArrayList arrayList)
+        public static void Del_on_value(ArrayList arrayList)
         {
 
             Console.Write("name: ");
@@ -170,23 +159,23 @@ namespace OOP_lab6
             Star star = new Star(name);
             arrayList.Remove(star);
             Console.WriteLine("Элемент удален (возможно)");
-            show(arrayList);
+            Show(arrayList);
 
         }
 
-        public static void revers(ArrayList arrayList)
+        public static void Revers(ArrayList arrayList)
         {
             arrayList.Reverse();
-            show(arrayList);
+            Show(arrayList);
         }       
         
-        public static void sort(ArrayList arrayList)
+        public static void Sort(ArrayList arrayList)
         {
             arrayList.Reverse();
-            show(arrayList);
+            Show(arrayList);
         }
         
-        public static void glove(ArrayList arrayList)
+        public static void Glove(ArrayList arrayList)
         {
             foreach (object obj in arrayList)
             {
@@ -197,11 +186,11 @@ namespace OOP_lab6
                 }
             }
             arrayList.Reverse();
-            show(arrayList);
+            Show(arrayList);
         }
 
 
-        public static void imitate_loading(string str)
+        public static void Imitate_loading(string str)
         {
             Thread.Sleep(50);
             Console.Write("\n");
