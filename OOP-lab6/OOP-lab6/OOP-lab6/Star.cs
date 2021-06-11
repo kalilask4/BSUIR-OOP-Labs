@@ -57,6 +57,8 @@ namespace OOP_lab6
 
         public void Glove()
         {
+            Console.WriteLine("        ");
+            Console.WriteLine("        ");
             Console.WriteLine("         *");
             Console.WriteLine("  *     ");
             Console.WriteLine("                *");
@@ -66,6 +68,8 @@ namespace OOP_lab6
             Console.WriteLine("                *");
             Console.WriteLine("  *            ");
             Console.WriteLine("         *");
+            Console.WriteLine("        ");
+            Console.WriteLine("        ");
         }
     }
 }

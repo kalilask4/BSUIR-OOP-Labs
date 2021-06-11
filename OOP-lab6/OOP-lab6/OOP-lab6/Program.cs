@@ -36,12 +36,12 @@ namespace OOP_lab6
             neutronStar1.print_description("SN 1987A was a type II supernova in the Large Magellanic Cloud, a dwarf satellite galaxy of the Milky Way.");
 
             //test comparing
-            star1.CompareTo(star2);
-            star2.CompareTo(neutronStar1);
-            Console.WriteLine(star1.Equals(star2));
+            //star1.CompareTo(star2);
+            //star2.CompareTo(neutronStar1);
+            //Console.WriteLine(star1.Equals(star2));
 
-            star1.Glove();
-            neutronStar1.Glove();
+            //star1.Glove();
+            //neutronStar1.Glove();
             
             ArrayList astrObjects = new ArrayList();
             astrObjects.Add(star1);

@@ -53,6 +53,8 @@ namespace OOP_lab6
             Console.WriteLine(" **     .      **");
             Console.WriteLine("   **   *    **");
             Console.WriteLine("        *");
+            Console.WriteLine("        ");
+            Console.WriteLine("        ");
         }                     
     }
 }

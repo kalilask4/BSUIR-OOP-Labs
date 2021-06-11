@@ -41,6 +41,7 @@ namespace OOP_lab6
                     case 7: del_on_value(arrayList); break;
                     case 8: revers(arrayList); break;
                     case 9: sort(arrayList); break;
+                    case 10: glove(arrayList); break;
                     case 0: return;                       
                     default: return;
                 }
@@ -181,6 +182,20 @@ namespace OOP_lab6
         
         public static void sort(ArrayList arrayList)
         {
+            arrayList.Reverse();
+            show(arrayList);
+        }
+        
+        public static void glove(ArrayList arrayList)
+        {
+            foreach (object obj in arrayList)
+            {
+                if(obj is Iglowing)
+                {
+                    Console.WriteLine(obj);
+                    (obj as Iglowing)?.Glove();
+                }
+            }
             arrayList.Reverse();
             show(arrayList);
         }
