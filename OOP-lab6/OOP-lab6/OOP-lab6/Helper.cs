@@ -190,10 +190,10 @@ namespace OOP_lab6
         {
             foreach (object obj in arrayList)
             {
-                if(obj is Iglowing)
+                if(obj is IGlowing)
                 {
                     Console.WriteLine(obj);
-                    (obj as Iglowing)?.Glove();
+                    (obj as IGlowing)?.Glove();
                 }
             }
             arrayList.Reverse();

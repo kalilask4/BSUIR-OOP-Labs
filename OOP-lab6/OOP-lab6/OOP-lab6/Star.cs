@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OOP_lab6
 {
-    class Star : AstronomicalObject, Iglowing
+    class Star : AstronomicalObject, IGlowing
     {
         public double temperature_K; //средняя температура в Кельвинах
          

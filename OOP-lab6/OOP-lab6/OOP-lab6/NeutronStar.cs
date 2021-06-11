@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OOP_lab6
 {
-    class NeutronStar: Star, Iglowing
+    class NeutronStar: Star, IGlowing
     {
         private double sun_mass_before_explosion;
 

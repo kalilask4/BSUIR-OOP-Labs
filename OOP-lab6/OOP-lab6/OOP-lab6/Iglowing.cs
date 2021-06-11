@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OOP_lab6
 {
-    interface Iglowing
+    interface IGlowing
     {
         public void Glove();
     }
