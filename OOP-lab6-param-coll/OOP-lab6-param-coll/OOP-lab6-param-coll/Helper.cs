@@ -23,12 +23,6 @@ namespace OOP_lab6_param_coll
                 Console.WriteLine("4 – показать(обработать) первый объект в очереди и удалить");
                 Console.WriteLine("5 – размер очереди");
                 Console.WriteLine("6 – нахождение элемента");
-                Console.WriteLine("5 – нахождение элемента с конца коллекции");
-                Console.WriteLine("6 – удаление элемента по индексу");
-                Console.WriteLine("7 – удаление элемента по значению");
-                Console.WriteLine("8 – реверс коллекции");
-                Console.WriteLine("9 – сортировка");
-                Console.WriteLine("10 – выполнение методов всех объектов, поддерживающих Interface");
                 Console.WriteLine("0 – выход");
                 int otvet = Convert.ToInt32(Console.ReadLine());
                 switch (otvet)
@@ -52,7 +46,6 @@ namespace OOP_lab6_param_coll
                 Console.WriteLine((obj as Star)?.ToString());
             }
             Console.ReadKey();
-
         }
 
         public static void Add(Queue queue)
@@ -84,26 +77,21 @@ namespace OOP_lab6_param_coll
             Console.Write("Первый в очереди - ");
             Console.WriteLine((queue.Peek() as Star)?.ToString());
             Console.ReadKey();
-
         }
 
         public static void Process_First(Queue queue)
         {
             string answer;
             int n=1;
-
             while (n == 1)
             {
-
                 Console.Write("Первый в очереди - ");
                 Console.WriteLine((queue.Dequeue() as Star)?.ToString());
                 Console.WriteLine("Обработан, удален");
                 Console.WriteLine("Продолжить (1) или закончить(0)?");
-
                 answer = Console.ReadLine();
                 if (!int.TryParse(answer, out n))
                     return;
-
             }
 
         }
@@ -112,7 +100,6 @@ namespace OOP_lab6_param_coll
         {
             Console.WriteLine(($"Сейчас в очереди {queue.Count} "));
             Console.ReadKey();
-
         }
 
 
@@ -120,7 +107,6 @@ namespace OOP_lab6_param_coll
         {
             string answer;
             int n = 1;
-
             while (n == 1)
             {
 
@@ -135,13 +121,10 @@ namespace OOP_lab6_param_coll
                 {
                     Console.WriteLine("В очереди нет");
                 }
-                
                 Console.WriteLine("Продолжить (1) или закончить(0)?");
                 answer = Console.ReadLine();
                 if (!int.TryParse(answer, out n))
                     return;
-
-
             }
 
         }
