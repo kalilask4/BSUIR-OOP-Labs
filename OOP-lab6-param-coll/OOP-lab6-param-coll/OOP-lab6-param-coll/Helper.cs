@@ -21,7 +21,8 @@ namespace OOP_lab6_param_coll
                 Console.WriteLine("2 – добавление элемента в конец");
                 Console.WriteLine("3 – показать первый объект в очереди");
                 Console.WriteLine("4 – показать(обработать) первый объект в очереди и удалить");
-                Console.WriteLine("4 – нахождение элемента с начала коллекции");
+                Console.WriteLine("5 – размер очереди");
+                Console.WriteLine("6 – нахождение элемента");
                 Console.WriteLine("5 – нахождение элемента с конца коллекции");
                 Console.WriteLine("6 – удаление элемента по индексу");
                 Console.WriteLine("7 – удаление элемента по значению");
@@ -36,12 +37,13 @@ namespace OOP_lab6_param_coll
                     case 2: Add(queue); break;
                     case 3: Show_First(queue); break;
                     case 4: Process_First(queue); break;
+                    case 5: Count(queue); break;
+                    case 6: Find(queue); break;
                     case 0: return;
                     default: return;
                 }
             }
         }
-
        
         public static void Show(Queue queue)
         {
@@ -52,8 +54,6 @@ namespace OOP_lab6_param_coll
             Console.ReadKey();
 
         }
-
-
 
         public static void Add(Queue queue)
         {
@@ -107,7 +107,44 @@ namespace OOP_lab6_param_coll
             }
 
         }
-        
+
+        public static void Count(Queue queue)
+        {
+            Console.WriteLine(($"Сейчас в очереди {queue.Count} "));
+            Console.ReadKey();
+
+        }
+
+
+        public static void Find(Queue queue)
+        {
+            string answer;
+            int n = 1;
+
+            while (n == 1)
+            {
+
+                Console.Write("Введите имя для поиска ");
+                String name = Console.ReadLine();
+                bool isFound = queue.Contains(new Star(name));
+                if (isFound)
+                {
+                    Console.WriteLine("Есть в очереди");
+                }
+                else
+                {
+                    Console.WriteLine("В очереди нет");
+                }
+                
+                Console.WriteLine("Продолжить (1) или закончить(0)?");
+                answer = Console.ReadLine();
+                if (!int.TryParse(answer, out n))
+                    return;
+
+
+            }
+
+        }
 
         public static void Imitate_loading(string str)
         {
@@ -153,5 +190,4 @@ namespace OOP_lab6_param_coll
             Console.Write(".\n");
         }
     }
-
 }
