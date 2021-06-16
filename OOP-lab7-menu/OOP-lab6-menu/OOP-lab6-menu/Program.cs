@@ -75,7 +75,7 @@ namespace OOP_lab6_menu
 
 
         static void f1(ref DirectoryInfo d)
-        {// установить текущий диск/каталог
+        {// установить текущий каталог
             Console.WriteLine($"Текущий каталог: {d}\nВведите новый каталог");
             string str = Console.ReadLine();
             if (str.Length == 0)
@@ -94,7 +94,10 @@ namespace OOP_lab6_menu
         }
         static void f2(DirectoryInfo d)
         {// вывод списка всех каталогов в текущем (пронумерованный)
-
+            DirectoryInfo[] directories = d.GetDirectories();
+            Console.WriteLine("Список подкаталогов");
+            for (int i = 0; i < directories.Length; i++)
+                Console.WriteLine($"{i} {directories[i]}");
         }
         static void f3(DirectoryInfo d)
         {// вывод списка всех файлов в текущем каталоге (пронумерованнный)
