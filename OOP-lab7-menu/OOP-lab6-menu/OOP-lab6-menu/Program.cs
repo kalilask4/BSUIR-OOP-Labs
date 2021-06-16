@@ -7,7 +7,7 @@ namespace OOP_lab6_menu
     {
         static void Main(string[] args)
         {
-            DirectoryInfo dir = new DirectoryInfo(@"E:\");         // текущий каталог по умолчанию
+            DirectoryInfo dir = new DirectoryInfo(@"E:\tmp");         // текущий каталог по умолчанию
             try
             {
                 while (true)
@@ -56,6 +56,8 @@ namespace OOP_lab6_menu
                             f9(dir);
                             break;
                         case 0: return;
+                        default:
+                            return;
                     }
                 }
             }
@@ -101,6 +103,10 @@ namespace OOP_lab6_menu
         }
         static void f3(DirectoryInfo d)
         {// вывод списка всех файлов в текущем каталоге (пронумерованнный)
+            FileInfo[] files = d.GetFiles();
+            Console.WriteLine("Список файлов");
+            for (int i = 0; i < files.Length; i++)
+                Console.WriteLine($"{i} {files[i]}");
 
         }
         static void f4(DirectoryInfo d)
