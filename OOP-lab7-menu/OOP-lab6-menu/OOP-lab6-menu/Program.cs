@@ -7,7 +7,7 @@ namespace OOP_lab6_menu
     {
         static void Main(string[] args)
         {
-            DirectoryInfo dir = new DirectoryInfo(@"D:\");         // текущий каталог по умолчанию
+            DirectoryInfo dir = new DirectoryInfo(@"E:\");         // текущий каталог по умолчанию
             try
             {
                 while (true)
@@ -76,6 +76,20 @@ namespace OOP_lab6_menu
 
         static void f1(ref DirectoryInfo d)
         {// установить текущий диск/каталог
+            Console.WriteLine($"Текущий каталог: {d}\nВведите новый каталог");
+            string str = Console.ReadLine();
+            if (str.Length == 0)
+                return;
+            if (Directory.Exists(d+str))
+            {
+                d = new DirectoryInfo(d+str);
+                Console.WriteLine($"Текущий каталог: {d.FullName}");
+            }
+            else{
+                Console.WriteLine($"Текущий каталог {str} не существует.");
+            }
+
+            
 
         }
         static void f2(DirectoryInfo d)
