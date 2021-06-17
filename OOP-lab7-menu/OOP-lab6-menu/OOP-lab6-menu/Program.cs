@@ -75,7 +75,6 @@ namespace OOP_lab6_menu
             }
         }
 
-
         static void f1(ref DirectoryInfo d)
         {// установить текущий каталог
             Console.WriteLine($"Текущий каталог: {d}\nВведите новый каталог");
@@ -90,10 +89,8 @@ namespace OOP_lab6_menu
             else{
                 Console.WriteLine($"Текущий каталог {str} не существует.");
             }
-
-            
-
         }
+
         static void f2(DirectoryInfo d)
         {// вывод списка всех каталогов в текущем (пронумерованный)
             DirectoryInfo[] directories = d.GetDirectories();
@@ -101,6 +98,7 @@ namespace OOP_lab6_menu
             for (int i = 0; i < directories.Length; i++)
                 Console.WriteLine($"{i} {directories[i]}");
         }
+
         static void f3(DirectoryInfo d)
         {// вывод списка всех файлов в текущем каталоге (пронумерованнный)
             FileInfo[] files = d.GetFiles();
@@ -109,6 +107,7 @@ namespace OOP_lab6_menu
                 Console.WriteLine($"{i} {files[i]}");
 
         }
+
         static void f4(DirectoryInfo d)
         {// вывод на экран содержимого указанного файла (по номеру)
             f3(d);
@@ -125,6 +124,7 @@ namespace OOP_lab6_menu
             Console.WriteLine(str);
             sr.Close();
         }
+
         static void f5(DirectoryInfo d)
         {// создание каталога в текущем
             Console.WriteLine("Введите имя каталога ");
@@ -137,6 +137,7 @@ namespace OOP_lab6_menu
             d.CreateSubdirectory(str);
             Console.WriteLine($"Каталог {str} создан");
         }
+
         static void f6(DirectoryInfo d)
         {// удаление каталога по номеру, если он пустой
             f2(d);
@@ -206,6 +207,5 @@ namespace OOP_lab6_menu
                     Console.WriteLine(++i + ")" + x.DirectoryName + "\\" + x.Name);
             }
         }
-
     }
 }
