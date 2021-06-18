@@ -7,7 +7,7 @@ namespace OOP_lab6
     class Program
     {
         static void Main(string[] args)
-        {           
+        {
             Console.WriteLine("             ....................................");
             Console.WriteLine("\n             .    Welcome to Space observer!    . ");
             Console.WriteLine("             ....................................\n");
@@ -28,7 +28,7 @@ namespace OOP_lab6
             NeutronStar neutronStar1 = new NeutronStar("Alma Star", 17, 111, 8, 2663568, 168000, "");
             Console.WriteLine(neutronStar1);
             neutronStar1.print_description("SN 1987A was a type II supernova in the Large Magellanic Cloud, a dwarf satellite galaxy of the Milky Way.");
-           
+
             ArrayList astrObjects = new ArrayList();
             astrObjects.Add(star1);
             astrObjects.Add(star2);
@@ -36,14 +36,13 @@ namespace OOP_lab6
             astrObjects.Add(new Star("Four", 23, 1.1));
             astrObjects.Add(star1);
             astrObjects.Add(new Star("Ann", 1, 1.3));
-            astrObjects.Add("String");
+
 
             Console.WriteLine();
             Helper.launch_menu(astrObjects);
-            
+
         }
-
-
-    
+    }
 }
-}
+
+        

@@ -74,9 +74,11 @@ namespace OOP_lab6
             {
                 case 1:
                     arrayList.Add(new Star(name, temperature_K, sun_mass));
+                    Console.WriteLine($"Добавлен: {new Star(name, temperature_K, sun_mass)}");
                     break;
                 case 2:
                     arrayList.Add(new NeutronStar(name, temperature_K, sun_mass));
+                    Console.WriteLine($"Добавлен:  {new NeutronStar(name, temperature_K, sun_mass)}");
                     break;
             }
         }
@@ -108,9 +110,11 @@ namespace OOP_lab6
             {
                 case 1:
                     arrayList.Insert(n, new Star(name, temperature_K, sun_mass));
+                    Console.WriteLine($"Добавлен: {new Star(name, temperature_K, sun_mass)}");
                     break;
                 case 2:
                     arrayList.Insert(n, new NeutronStar(name, temperature_K, sun_mass));
+                    Console.WriteLine($"Добавлен:  {new NeutronStar(name, temperature_K, sun_mass)}");
                     break;
             }
         }

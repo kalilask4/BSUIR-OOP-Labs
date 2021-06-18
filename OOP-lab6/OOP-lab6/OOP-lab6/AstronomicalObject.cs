@@ -11,7 +11,7 @@ namespace OOPlaba6
         public double earth_mass;    // относительно Земли 1 M⊕ = (5,9722 ± 0,0006) × 1024 кг
         public double sun_mass=1;   //относительно массы Солнца
         public double earth_distance;    //расстояние до земли св.л (1пс=3,2 св.года), max=13,035 млрд. св.л.
-        public string legend = "Unsafe for humans.";
+        public string legend = "Unsafe";
 
         public string Name { get => name; set => name = value; }
         public string Type_object { get => type_object; set => type_object = value; }
