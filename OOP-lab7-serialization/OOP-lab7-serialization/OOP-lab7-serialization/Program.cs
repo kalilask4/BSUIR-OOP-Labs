@@ -14,8 +14,10 @@ namespace OOP_lab7_serialization
             carBat.SaveObject("1.bin");
             Car carBat2 = Car.LoadObject("1.bin");
             Console.WriteLine(carBat2.ToString());
-            
-            
+
+            carBat2.Serialize("2.bin");
+
+
             Console.ReadKey();
         }
     }

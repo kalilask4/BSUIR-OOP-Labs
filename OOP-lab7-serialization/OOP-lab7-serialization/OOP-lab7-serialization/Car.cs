@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace OOP_lab7_serialization
 {
-   
+   [Serializable]
     sealed class Car
     {
         public string auto_brands;
@@ -254,6 +255,18 @@ namespace OOP_lab7_serialization
             return new Car(auto_brands, model, fuel_tank_capacity, fuel_quantity, current_speed, fuel_consumption);
         }
 
+
+        public void Serialize(string filename)
+        {
+            Stream s = new FileStream(filename, FileMode.Create);
+            BinaryFormatter fmt = new BinaryFormatter();
+            fmt.Serialize(s, this);
+            s.Close();
+            Console.WriteLine($"Объект сериализован");
+
+
+
+        }
 
 
 
