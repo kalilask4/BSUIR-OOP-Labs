@@ -263,9 +263,16 @@ namespace OOP_lab7_serialization
             fmt.Serialize(s, this);
             s.Close();
             Console.WriteLine($"Объект сериализован");
+        }
 
-
-
+        public static Car Deserialize(string filename)
+        {
+            Stream s = new FileStream(filename, FileMode.Open);
+            BinaryFormatter fmt = new BinaryFormatter();
+            Car car = (Car)fmt.Deserialize(s);
+            s.Close();
+            Console.WriteLine($"Объект десериализован");
+            return car;
         }
 
 
