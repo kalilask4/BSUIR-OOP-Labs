@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace OOP_lab7_serialization
 {
+   
     sealed class Car
     {
         public string auto_brands;
@@ -16,7 +17,7 @@ namespace OOP_lab7_serialization
         private double fuel_quantity;
         private int current_speed;
         private double fuel_consumption;
-        private double[] pressure_whells = new double[4];
+        //private double[] pressure_whells = new double[4];
 
 
         //public Car() : this("Noname", "Noname")
@@ -31,8 +32,8 @@ namespace OOP_lab7_serialization
         //}
 
         public Car(string auto_brands, string model, double fuel_tank_capacity,
-           double fuel_quantity, int current_speed, double fuel_consumption,
-           params double[] pressure_whells)
+           double fuel_quantity, int current_speed, double fuel_consumption
+           /*params double[] pressure_whells*/)
         {
             this.auto_brands = auto_brands;
             Model = model;
@@ -183,8 +184,8 @@ namespace OOP_lab7_serialization
                 "fuel tank capacity is {2} L \n" +
                 "fuel quantity is {3} L \n" +
                 "current_speed is {4} km/h\n" +
-                "fuel_consumption is {5} L/100km\n" +
-                "pressure_whell is {6} - {7} - {8} - {9} Bar\n",
+                "fuel_consumption is {5} L/100km\n" /*+
+                "pressure_whell is {6} - {7} - {8} - {9} Bar\n"*/,
                 auto_brands, Model, Fuel_tank_capacity, Fuel_quantity, Current_speed, Fuel_consumption
                /* Pressure_whells[0], Pressure_whells[1], Pressure_whells[2], Pressure_whells[3]*/);
         }
@@ -223,6 +224,38 @@ namespace OOP_lab7_serialization
             }
             writer.Close();
         }
+
+        public void SaveObject(string filename)
+        {
+            FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.Write);
+            BinaryWriter bw = new BinaryWriter(fs);
+            bw.Write(auto_brands);
+            bw.Write(model);
+            bw.Write(fuel_tank_capacity);
+            bw.Write(fuel_quantity);
+            bw.Write(current_speed);
+            bw.Write(fuel_consumption);
+            fs.Close();
+            Console.WriteLine($"Файл {filename} сохранен");
+        }
+
+        public static Car LoadObject(string filename)
+        {
+            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
+            BinaryReader br = new BinaryReader(fs);
+            string auto_brands = br.ReadString();
+            string model = br.ReadString();
+            double fuel_tank_capacity = br.ReadDouble();
+            double fuel_quantity = br.ReadDouble();
+            int current_speed = br.ReadInt32();
+            double fuel_consumption = br.ReadDouble();
+            fs.Close();
+            Console.WriteLine($"Файл {filename} считан");
+            return new Car(auto_brands, model, fuel_tank_capacity, fuel_quantity, current_speed, fuel_consumption);
+        }
+
+
+
 
     }
 }
