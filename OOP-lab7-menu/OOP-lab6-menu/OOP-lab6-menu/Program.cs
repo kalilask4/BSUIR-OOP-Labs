@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO;
 
-namespace OOP_lab6_menu
+namespace OOP_lab7_menu
 {
     class Program
     {
         static void Main(string[] args)
         {
-            DirectoryInfo dir = new DirectoryInfo(@"E:\tmp");         // текущий каталог по умолчанию
+            DirectoryInfo dir = new DirectoryInfo(@"E:\");         // текущий каталог по умолчанию
             try
             {
                 while (true)
