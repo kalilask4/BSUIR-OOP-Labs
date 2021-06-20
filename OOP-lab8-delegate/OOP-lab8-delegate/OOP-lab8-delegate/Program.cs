@@ -20,9 +20,6 @@ namespace OOP_lab8_delegate
 
 
 
-
-
-
             Console.ReadKey();
         }
 

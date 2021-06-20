@@ -72,7 +72,6 @@ namespace OOP_lab8_delegate
 
         public void addDelvoid(DELVOID d)
         {
-            if (d != null)
                 delvoid += d;
         }
 
