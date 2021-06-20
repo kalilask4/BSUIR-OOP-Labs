@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace OOP_lab8_delegate
 {
     public delegate void DELVOID();
+    public delegate double DELPARAM(double w);
     class Car
     {
         public string auto_brands;
@@ -19,6 +20,7 @@ namespace OOP_lab8_delegate
         private int current_speed;
         private double fuel_consumption;
         private DELVOID delvoid;   // must be private!
+        private DELPARAM delparam;   // must be private!
 
 
         public Car(string auto_brands, string model, double fuel_tank_capacity,
@@ -73,13 +75,49 @@ namespace OOP_lab8_delegate
         public void addDelvoid(DELVOID d)
         {
                 delvoid += d;
-        }
+        } 
+        
+
 
 
         public void runDelvoid()
         {
             delvoid.Invoke();
         }
+
+        public void addDelparam(DELPARAM d)
+        {
+                delparam += d;
+        }
+
+        public void tank_up(double fuel_quantity) //delparam(fuel_quantity)
+        {
+            Console.WriteLine($"Попытка заправки на {fuel_quantity}");
+            if (delparam != null){
+                if(this.Fuel_quantity < this.Fuel_tank_capacity){
+                if ((this.Fuel_quantity + fuel_quantity) < this.Fuel_tank_capacity){
+                    Console.WriteLine($"Заправка на {fuel_quantity}");
+                    this.Fuel_quantity += fuel_quantity;
+                    Console.WriteLine($"Бак заполнен на {fuel_quantity}: {this.Fuel_quantity}/{this.Fuel_tank_capacity} L");
+                }else
+                {
+                    Console.WriteLine($"Заправка на {this.Fuel_tank_capacity-this.Fuel_quantity}");
+                    Console.WriteLine($"Бак заполнен на {this.Fuel_tank_capacity - this.Fuel_quantity}(неиспользовано: {fuel_quantity-(this.Fuel_tank_capacity - this.Fuel_quantity)}):" +
+                        $" {this.Fuel_quantity}/{this.Fuel_tank_capacity} L");
+                    this.Fuel_quantity += this.Fuel_tank_capacity - this.Fuel_quantity;
+
+                    }
+            }
+            else{
+                Console.WriteLine($"Бак полон, заправка не требуется: {this.Fuel_quantity}/{this.Fuel_tank_capacity} L");
+            }
+            }
+          
+            
+        }
+            
+
+
 
         public bool comparison(Car car)
         {

@@ -36,11 +36,21 @@ namespace OOP_lab8_delegate
             else
             {
                 Console.WriteLine("Делегаты не равны");
-
             }
 
+            Console.WriteLine();
+            //делегат с параметром
+            Console.WriteLine("Делегат с параметром");
+            Console.WriteLine($"Бак carRick {carRick.auto_brands} {carRick.Model} : {carRick.Fuel_quantity}/{carRick.Fuel_tank_capacity}");
+            carRick.addDelparam(tank_up1);
+            carRick.tank_up(1);
+            Console.WriteLine($"Бак carRick {carRick.auto_brands} {carRick.Model} : {carRick.Fuel_quantity}/{carRick.Fuel_tank_capacity}");
 
-           
+
+            Console.WriteLine(carRick.ToString()); 
+
+
+
 
 
 
@@ -59,6 +69,17 @@ namespace OOP_lab8_delegate
             Console.WriteLine("Ready Player2");
         }
 
+        static double tank_up1(double fuel_quantity)
+        {
+           
+            return fuel_quantity *= 10;
+        }        
+        
+        static double tank_up2(double fuel_quantity)
+        {
+           // Console.WriteLine($"Попытка заправки на {fuel_quantity}");
+            return fuel_quantity += 20;
+        }
 
     }
 }
