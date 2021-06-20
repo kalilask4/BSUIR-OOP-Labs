@@ -15,7 +15,7 @@ namespace OOP_lab8_delegate
             //carBat.delvoid();
 
             carBat.addDelvoid(m1);
-            carBat.runDelvoid(m1);
+            carBat.runDelvoid();
 
 
 

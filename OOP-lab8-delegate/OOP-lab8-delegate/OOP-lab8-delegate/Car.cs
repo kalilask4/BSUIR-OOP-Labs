@@ -77,7 +77,7 @@ namespace OOP_lab8_delegate
         }
 
 
-        public void runDelvoid(DELVOID d)
+        public void runDelvoid()
         {
             delvoid.Invoke();
         }
