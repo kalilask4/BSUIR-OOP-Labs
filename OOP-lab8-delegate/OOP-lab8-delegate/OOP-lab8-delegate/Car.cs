@@ -18,7 +18,8 @@ namespace OOP_lab8_delegate
         private double fuel_quantity;
         private int current_speed;
         private double fuel_consumption;
-        public DELVOID delvoid;
+        private DELVOID delvoid;   // must be private!
+
 
         public Car(string auto_brands, string model, double fuel_tank_capacity,
            double fuel_quantity, int current_speed, double fuel_consumption
@@ -69,6 +70,19 @@ namespace OOP_lab8_delegate
         }
 
 
+        public void addDelvoid(DELVOID d)
+        {
+            if (d != null)
+                delvoid += d;
+        }
+
+
+        public void runDelvoid(DELVOID d)
+        {
+            delvoid.Invoke();
+        }
+
+
         public double calc_remainder_mileage()
         {
             return ((this.Fuel_tank_capacity - this.Fuel_quantity) / this.Fuel_consumption);
@@ -95,91 +109,5 @@ namespace OOP_lab8_delegate
                 auto_brands, Model, Fuel_tank_capacity, Fuel_quantity, Current_speed, Fuel_consumption
                );
         }
-
-
-     /*   public static void SaveClass(string filename)
-        {
-            Type t = typeof(Car);
-            StreamWriter writer = new StreamWriter(filename);
-            writer.WriteLine($"Полное имя класса: {t.FullName}");
-            if (t.IsAbstract) writer.WriteLine("Абстрактный класс");
-            if (t.IsClass) writer.WriteLine("Обычный класс");
-            if (t.IsInterface) writer.WriteLine("Интерфейс");
-            if (t.IsEnum) writer.WriteLine("Перечисление");
-            if (t.IsSealed) writer.WriteLine("Закрытый для наследования");
-            FieldInfo[] fields = t.GetFields();
-            if (fields.Length > 0)
-                writer.WriteLine("***Поля класса***");
-            foreach (var field in fields)
-            {
-                writer.WriteLine(field);
-            }
-            PropertyInfo[] properties = t.GetProperties();
-            if (properties.Length > 0)
-                writer.WriteLine("***Свойства класса***");
-            foreach (var property in properties)
-            {
-                writer.WriteLine(property);
-            }
-            MethodInfo[] methods = t.GetMethods();
-            if (methods.Length > 0)
-                writer.WriteLine("***Методы класса***");
-            foreach (var method in methods)
-            {
-                writer.WriteLine(method);
-            }
-            writer.Close();
-        }*/
-        /*
-        public void SaveObject(string filename)
-        {
-            FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.Write);
-            BinaryWriter bw = new BinaryWriter(fs);
-            bw.Write(auto_brands);
-            bw.Write(model);
-            bw.Write(fuel_tank_capacity);
-            bw.Write(fuel_quantity);
-            bw.Write(current_speed);
-            bw.Write(fuel_consumption);
-            fs.Close();
-            Console.WriteLine($"Файл {filename} сохранен");
-        }
-
-        public static Car LoadObject(string filename)
-        {
-            FileStream fs = new FileStream(filename, FileMode.Open, FileAccess.Read);
-            BinaryReader br = new BinaryReader(fs);
-            string auto_brands = br.ReadString();
-            string model = br.ReadString();
-            double fuel_tank_capacity = br.ReadDouble();
-            double fuel_quantity = br.ReadDouble();
-            int current_speed = br.ReadInt32();
-            double fuel_consumption = br.ReadDouble();
-            fs.Close();
-            Console.WriteLine($"Файл {filename} считан");
-            return new Car(auto_brands, model, fuel_tank_capacity, fuel_quantity, current_speed, fuel_consumption);
-        }*/
-
-        /*
-                public void Serialize(string filename)
-                {
-                    Stream s = new FileStream(filename, FileMode.Create);
-                    BinaryFormatter fmt = new BinaryFormatter();
-                    fmt.Serialize(s, this);
-                    s.Close();
-                    Console.WriteLine($"Объект сериализован");
-                }
-
-                public static Car Deserialize(string filename)
-                {
-                    Stream s = new FileStream(filename, FileMode.Open);
-                    BinaryFormatter fmt = new BinaryFormatter();
-                    Car car = (Car)fmt.Deserialize(s);
-                    s.Close();
-                    Console.WriteLine($"Объект десериализован");
-                    return car;
-                }
-
-            }*/
     }
 }
