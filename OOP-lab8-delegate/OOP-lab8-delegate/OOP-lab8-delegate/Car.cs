@@ -81,6 +81,11 @@ namespace OOP_lab8_delegate
             delvoid.Invoke();
         }
 
+        public bool comparison(Car car)
+        {
+            return delvoid == car.delvoid;
+        }
+
 
         public double calc_remainder_mileage()
         {

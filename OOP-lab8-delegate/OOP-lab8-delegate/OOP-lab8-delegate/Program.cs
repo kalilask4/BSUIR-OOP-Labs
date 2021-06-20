@@ -14,8 +14,34 @@ namespace OOP_lab8_delegate
             //carBat.delvoid += m1;
             //carBat.delvoid();
 
+            carRick.addDelvoid(m1);
             carBat.addDelvoid(m1);
+            //carBat.addDelvoid(m2);
+            carBat.addDelvoid(delegate () { Console.WriteLine("Stop!"); }); //анонимный делегат
+            carBat.addDelvoid(() => Console.WriteLine("Go!")); //лямбда
+
+            Console.WriteLine("Вызов делегатов carRick");
+            carRick.runDelvoid();
+            Console.WriteLine();
+            Console.WriteLine("Вызов делегатов carBat");
             carBat.runDelvoid();
+
+
+            Console.WriteLine();
+            Console.WriteLine("Сравнение делегатов");
+            if(carBat.comparison(carRick))
+            {
+                Console.WriteLine("Делегаты равны");
+            }
+            else
+            {
+                Console.WriteLine("Делегаты не равны");
+
+            }
+
+
+           
+
 
 
 
