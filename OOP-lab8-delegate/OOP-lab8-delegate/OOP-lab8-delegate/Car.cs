@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace OOP_lab8_delegate
 {
-    public delegate void DELVOID();
-    public delegate double DELPARAM(double w);
+    //public delegate void DELVOID();
+    //public delegate double DELPARAM(double w);
+    //перепишем под стандартный делегат
     class Car
     {
         public string auto_brands;
@@ -19,8 +20,10 @@ namespace OOP_lab8_delegate
         private double fuel_quantity;
         private int current_speed;
         private double fuel_consumption;
-        private DELVOID delvoid;   // must be private!
-        private DELPARAM delparam;   // must be private!
+        //private DELVOID delvoid;   // must be private!
+        //private DELPARAM delparam;   // must be private!
+        private Action delvoid;
+        private Func<double,double> delparam;
 
 
         public Car(string auto_brands, string model, double fuel_tank_capacity,
@@ -72,7 +75,7 @@ namespace OOP_lab8_delegate
         }
 
 
-        public void addDelvoid(DELVOID d)
+        public void addDelvoid(Action d)
         {
                 delvoid += d;
         } 
@@ -85,12 +88,36 @@ namespace OOP_lab8_delegate
             delvoid.Invoke();
         }
 
-        public void addDelparam(DELPARAM d)
+        public void addDelparam(Func<double, double> d)
         {
                 delparam += d;
         }
 
         public void tank_up(double fuel_quantity) //delparam(fuel_quantity)
+        {
+            Console.WriteLine($"Попытка заправки на {delparam(fuel_quantity)}");
+            if (delparam != null){
+                if(this.Fuel_quantity < this.Fuel_tank_capacity){
+                    if ((this.Fuel_quantity + delparam(fuel_quantity)) < this.Fuel_tank_capacity) {
+                        Console.WriteLine($"Заправка на {delparam(fuel_quantity)}");
+                        this.Fuel_quantity += delparam(fuel_quantity);
+                        Console.WriteLine($"Бак заполнен на {delparam(fuel_quantity)}: {this.Fuel_quantity}/{this.Fuel_tank_capacity} L");
+                    } else
+                    {
+                        Console.WriteLine($"Заправка на {this.Fuel_tank_capacity - this.Fuel_quantity}");
+                        Console.Write($"Бак заполнен на {this.Fuel_tank_capacity - this.Fuel_quantity}(неиспользовано: {delparam(fuel_quantity) - (this.Fuel_tank_capacity - this.Fuel_quantity)}):");
+                        this.Fuel_quantity += this.Fuel_tank_capacity - this.Fuel_quantity;
+                        Console.WriteLine($" {this.Fuel_quantity}/{this.Fuel_tank_capacity} L");
+                    }
+            }
+            else{
+                Console.WriteLine($"Бак полон, заправка не требуется: {this.Fuel_quantity}/{this.Fuel_tank_capacity} L");
+            }
+            }
+          
+            
+        }
+        public void tank_up0(double fuel_quantity) //fuel_quantity заменен на delparam(fuel_quantity)
         {
             Console.WriteLine($"Попытка заправки на {fuel_quantity}");
             if (delparam != null){

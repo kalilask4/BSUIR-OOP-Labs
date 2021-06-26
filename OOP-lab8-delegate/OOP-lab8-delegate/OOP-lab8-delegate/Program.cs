@@ -41,15 +41,32 @@ namespace OOP_lab8_delegate
             Console.WriteLine();
             //делегат с параметром
             Console.WriteLine("Делегат с параметром");
+            Console.WriteLine("До запрвки");
             Console.WriteLine($"Бак carRick {carRick.auto_brands} {carRick.Model} : {carRick.Fuel_quantity}/{carRick.Fuel_tank_capacity}");
             carRick.addDelparam(tank_up1);
+
+            //Console.WriteLine("не делегат");
+            //carRick.tank_up0(1);
+            //Console.WriteLine($"Бак carRick {carRick.auto_brands} {carRick.Model} : {carRick.Fuel_quantity}/{carRick.Fuel_tank_capacity}");
+            //Console.WriteLine("делегат");
             carRick.tank_up(1);
             Console.WriteLine($"Бак carRick {carRick.auto_brands} {carRick.Model} : {carRick.Fuel_quantity}/{carRick.Fuel_tank_capacity}");
+            //Console.WriteLine(carRick.ToString());
+            Console.WriteLine();
+            Console.WriteLine("До запрвки");
+            Console.WriteLine($"Бак carBat {carBat.auto_brands} {carBat.Model} : {carBat.Fuel_quantity}/{carBat.Fuel_tank_capacity}");
+            carBat.addDelparam(tank_up2);
+            carBat.tank_up(30);
+            Console.WriteLine($"Бак carBat {carBat.auto_brands} {carBat.Model} : {carBat.Fuel_quantity}/{carBat.Fuel_tank_capacity}");
+            //Console.WriteLine(carBat.ToString());
 
-
-            Console.WriteLine(carRick.ToString()); 
-
-
+            Car carVinchester = new Car("Chevrolet", "Impala", 95, 95.0, 120, 9);
+            Console.WriteLine(carVinchester.ToString());
+            Console.WriteLine("До запрвки");
+            Console.WriteLine($"Бак carVinchester {carVinchester.auto_brands} {carVinchester.Model} : {carVinchester.Fuel_quantity}/{carVinchester.Fuel_tank_capacity}");
+            carVinchester.addDelparam(tank_up2);
+            carVinchester.tank_up(15);
+            Console.WriteLine($"Бак carVinchester {carVinchester.auto_brands} {carVinchester.Model} : {carVinchester.Fuel_quantity}/{carVinchester.Fuel_tank_capacity}");
 
 
 
@@ -78,7 +95,7 @@ namespace OOP_lab8_delegate
         static double tank_up2(double fuel_quantity)
         {
            // Console.WriteLine($"Попытка заправки на {fuel_quantity}");
-            return fuel_quantity += 20;
+            return fuel_quantity += 10;
         }
 
     }
