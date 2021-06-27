@@ -6,6 +6,10 @@ namespace OOP_lab8_delegate
     {
         static void Main(string[] args)
         {
+
+            Add add = new Add();
+            AddVIP addVIP = new AddVIP();
+
             Car carBat = new Car("Ford", "Lincoln Futura", 80, 50.0, 140, 38);
             Console.WriteLine(carBat.ToString());
             Car carRick = new Car("Chevrolet", "Caprice", 95, 80.0, 120, 9);
@@ -14,11 +18,11 @@ namespace OOP_lab8_delegate
             //carBat.delvoid += m1;
             //carBat.delvoid();
 
-            carRick.addDelvoid(m1);
-            carBat.addDelvoid(m1);
+            //carRick.addDelvoid(m1);
+            //carBat.addDelvoid(m1);
             //carBat.addDelvoid(m2);
-            carBat.addDelvoid(delegate () { Console.WriteLine("Stop!"); }); //анонимный делегат
-            carBat.addDelvoid(() => Console.WriteLine("Go!")); //лямбда
+            //carBat.addDelvoid(delegate () { Console.WriteLine("Stop!"); }); //анонимный делегат
+            //carBat.addDelvoid(() => Console.WriteLine("Go!")); //лямбда
 
             Console.WriteLine("Вызов делегатов carRick");
             carRick.runDelvoid();
@@ -27,6 +31,7 @@ namespace OOP_lab8_delegate
             carBat.runDelvoid();
 
 
+            /*
             Console.WriteLine();
             Console.WriteLine("Сравнение делегатов");
             if(carBat.comparison(carRick))
@@ -37,6 +42,8 @@ namespace OOP_lab8_delegate
             {
                 Console.WriteLine("Делегаты не равны");
             }
+            */
+
 
             Console.WriteLine();
             //делегат с параметром
@@ -49,6 +56,7 @@ namespace OOP_lab8_delegate
             //carRick.tank_up0(1);
             //Console.WriteLine($"Бак carRick {carRick.auto_brands} {carRick.Model} : {carRick.Fuel_quantity}/{carRick.Fuel_tank_capacity}");
             //Console.WriteLine("делегат");
+           // carRick.On_tank_up += add.message();
             carRick.tank_up(1);
             Console.WriteLine($"Бак carRick {carRick.auto_brands} {carRick.Model} : {carRick.Fuel_quantity}/{carRick.Fuel_tank_capacity}");
             //Console.WriteLine(carRick.ToString());
@@ -62,16 +70,25 @@ namespace OOP_lab8_delegate
 
             Car carVinchester = new Car("Chevrolet", "Impala", 95, 95.0, 120, 9);
             Console.WriteLine(carVinchester.ToString());
-            Console.WriteLine("До запрвки");
-            Console.WriteLine($"Бак carVinchester {carVinchester.auto_brands} {carVinchester.Model} : {carVinchester.Fuel_quantity}/{carVinchester.Fuel_tank_capacity}");
-            //carVinchester.addDelparam(tank_up2);
+           // Console.WriteLine("До запрвки");
+            //Console.WriteLine($"Бак carVinchester {carVinchester.auto_brands} {carVinchester.Model} : {carVinchester.Fuel_quantity}/{carVinchester.Fuel_tank_capacity}");
+            carVinchester.addDelparam(tank_up2);
+
             //carVinchester.addDelparam(delegate(double d) { return d + 3; });//анонимный делегат
-            carVinchester.addDelparam(d => d*10);//лямбда
-            
-            carVinchester.tank_up(15);
+            //carVinchester.addDelparam(d => d*10);//лямбда
+
+            //события
+            carVinchester.On_tank_up += add.message;
+            carVinchester.tank_up(10);
             Console.WriteLine($"Бак carVinchester {carVinchester.auto_brands} {carVinchester.Model} : {carVinchester.Fuel_quantity}/{carVinchester.Fuel_tank_capacity}");
 
-
+            Console.WriteLine();
+            Car carRussHanneman = new Car("McLaren", "650S Spider", 100, 20, 120, 9);
+            carRussHanneman.addDelparam(tank_up1);
+            carRussHanneman.On_tank_up += add.message;
+            carRussHanneman.On_tank_up += addVIP.message;
+            carRussHanneman.tank_up(20);
+           
 
 
 

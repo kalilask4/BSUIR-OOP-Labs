@@ -23,7 +23,25 @@ namespace OOP_lab8_delegate
         //private DELVOID delvoid;   // must be private!
         //private DELPARAM delparam;   // must be private!
         private Action delvoid;
+   
         private Func<double,double> delparam;
+
+        private event Action _On_tank_up;
+
+        //Аксессор
+        public event Action On_tank_up
+        {
+            add
+            {
+                _On_tank_up += value; 
+            }
+            remove
+            {
+                _On_tank_up -= value;
+            }
+        }
+
+
 
 
         public Car(string auto_brands, string model, double fuel_tank_capacity,
@@ -85,7 +103,7 @@ namespace OOP_lab8_delegate
 
         public void runDelvoid()
         {
-            delvoid.Invoke();
+            delvoid?.Invoke();
         }
 
         public void addDelparam(Func<double, double> d)
@@ -95,15 +113,24 @@ namespace OOP_lab8_delegate
 
         public void tank_up(double fuel_quantity) //delparam(fuel_quantity)
         {
-            Console.WriteLine($"Попытка заправки на {delparam(fuel_quantity)}");
+            
+            ///Console.WriteLine($"Попытка заправки на {delparam(fuel_quantity)}");
+
+            if(fuel_quantity >0) // (this.Fuel_tank_capacity - this.Fuel_quantity > 0)
+            {
+                _On_tank_up?.Invoke();
+            }
+                
+
             if (delparam != null){
-                if(this.Fuel_quantity < this.Fuel_tank_capacity){
+                ///Console.WriteLine($"Попытка заправки на {delparam(fuel_quantity)}");
+
+                if (this.Fuel_quantity < this.Fuel_tank_capacity){
                     if ((this.Fuel_quantity + delparam(fuel_quantity)) < this.Fuel_tank_capacity) {
                         Console.WriteLine($"Заправка на {delparam(fuel_quantity)}");
                         this.Fuel_quantity += delparam(fuel_quantity);
                         Console.WriteLine($"Бак заполнен на {delparam(fuel_quantity)}: {this.Fuel_quantity}/{this.Fuel_tank_capacity} L");
-                    } else
-                    {
+                    } else                    {
                         Console.WriteLine($"Заправка на {this.Fuel_tank_capacity - this.Fuel_quantity}");
                         Console.Write($"Бак заполнен на {this.Fuel_tank_capacity - this.Fuel_quantity}(неиспользовано: {delparam(fuel_quantity) - (this.Fuel_tank_capacity - this.Fuel_quantity)}):");
                         this.Fuel_quantity += this.Fuel_tank_capacity - this.Fuel_quantity;
@@ -112,8 +139,12 @@ namespace OOP_lab8_delegate
             }
             else{
                 Console.WriteLine($"Бак полон, заправка не требуется: {this.Fuel_quantity}/{this.Fuel_tank_capacity} L");
-            }
-            }
+                }
+
+
+
+
+        }
           
             
         }
