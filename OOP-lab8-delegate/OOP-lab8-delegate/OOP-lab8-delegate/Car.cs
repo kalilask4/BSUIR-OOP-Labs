@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace OOP_lab8_delegate
@@ -189,6 +190,19 @@ namespace OOP_lab8_delegate
                 return true;
             else
                 return false;
+        }
+
+        public void finish(int speed, Action action)
+        {
+            int h = 0;
+            while(this.Current_speed < speed)
+            {
+                this.Current_speed++;
+                Thread.Sleep(35);
+                h++;
+            }
+            action();
+            //return h;
         }
 
 

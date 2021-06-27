@@ -83,14 +83,18 @@ namespace OOP_lab8_delegate
             Console.WriteLine($"Бак carVinchester {carVinchester.auto_brands} {carVinchester.Model} : {carVinchester.Fuel_quantity}/{carVinchester.Fuel_tank_capacity}");
 
             Console.WriteLine();
-            Car carRussHanneman = new Car("McLaren", "650S Spider", 100, 20, 120, 9);
+            Car carRussHanneman = new Car("McLaren", "650S Spider", 100, 20, 0, 9);
             carRussHanneman.addDelparam(tank_up1);
             carRussHanneman.On_tank_up += add.message;
             carRussHanneman.On_tank_up += addVIP.message;
             carRussHanneman.tank_up(20);
-            Console.ReadKey();
+            //Console.ReadKey();
 
             //обратный вызов
+            DateTime timeStart = DateTime.Now;
+            carRussHanneman.finish(165, f);
+            DateTime timeFinish = DateTime.Now;
+            Console.WriteLine((timeFinish-timeStart).Seconds);
 
 
         }
@@ -115,6 +119,11 @@ namespace OOP_lab8_delegate
         {
             // Console.WriteLine($"Попытка заправки на {fuel_quantity}");
             return fuel_quantity += 10;
+        }
+
+        static void f()
+        {
+            Console.Write("Запрашиваемая скорость достигнута за (sec): ");
         }
 
     }
