@@ -56,7 +56,7 @@ namespace OOP_lab8_delegate
             //carRick.tank_up0(1);
             //Console.WriteLine($"Бак carRick {carRick.auto_brands} {carRick.Model} : {carRick.Fuel_quantity}/{carRick.Fuel_tank_capacity}");
             //Console.WriteLine("делегат");
-           // carRick.On_tank_up += add.message();
+            //carRick.On_tank_up += add.message();
             carRick.tank_up(1);
             Console.WriteLine($"Бак carRick {carRick.auto_brands} {carRick.Model} : {carRick.Fuel_quantity}/{carRick.Fuel_tank_capacity}");
             //Console.WriteLine(carRick.ToString());
@@ -70,7 +70,7 @@ namespace OOP_lab8_delegate
 
             Car carVinchester = new Car("Chevrolet", "Impala", 95, 95.0, 120, 9);
             Console.WriteLine(carVinchester.ToString());
-           // Console.WriteLine("До запрвки");
+            //Console.WriteLine("До запрвки");
             //Console.WriteLine($"Бак carVinchester {carVinchester.auto_brands} {carVinchester.Model} : {carVinchester.Fuel_quantity}/{carVinchester.Fuel_tank_capacity}");
             carVinchester.addDelparam(tank_up2);
 
@@ -88,12 +88,11 @@ namespace OOP_lab8_delegate
             carRussHanneman.On_tank_up += add.message;
             carRussHanneman.On_tank_up += addVIP.message;
             carRussHanneman.tank_up(20);
-           
-
-
-
-
             Console.ReadKey();
+
+            //обратный вызов
+
+
         }
 
         static void m1()
@@ -108,13 +107,13 @@ namespace OOP_lab8_delegate
 
         static double tank_up1(double fuel_quantity)
         {
-           
+
             return fuel_quantity *= 10;
-        }        
-        
+        }
+
         static double tank_up2(double fuel_quantity)
         {
-           // Console.WriteLine($"Попытка заправки на {fuel_quantity}");
+            // Console.WriteLine($"Попытка заправки на {fuel_quantity}");
             return fuel_quantity += 10;
         }
 
