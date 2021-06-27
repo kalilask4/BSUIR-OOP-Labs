@@ -64,7 +64,10 @@ namespace OOP_lab8_delegate
             Console.WriteLine(carVinchester.ToString());
             Console.WriteLine("До запрвки");
             Console.WriteLine($"Бак carVinchester {carVinchester.auto_brands} {carVinchester.Model} : {carVinchester.Fuel_quantity}/{carVinchester.Fuel_tank_capacity}");
-            carVinchester.addDelparam(tank_up2);
+            //carVinchester.addDelparam(tank_up2);
+            //carVinchester.addDelparam(delegate(double d) { return d + 3; });//анонимный делегат
+            carVinchester.addDelparam(d => d*10);//лямбда
+            
             carVinchester.tank_up(15);
             Console.WriteLine($"Бак carVinchester {carVinchester.auto_brands} {carVinchester.Model} : {carVinchester.Fuel_quantity}/{carVinchester.Fuel_tank_capacity}");
 
