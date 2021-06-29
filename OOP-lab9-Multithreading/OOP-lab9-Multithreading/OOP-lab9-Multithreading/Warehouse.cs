@@ -30,9 +30,10 @@ namespace OOP_lab9_Multithreading
             }
         }
 
-        public Warehouse(int capasity)
+        public Warehouse(int capasity, List<Good> goods)
         {
             Capasity = capasity;
+            this.goods = goods;
         }
 
         public override string ToString()
