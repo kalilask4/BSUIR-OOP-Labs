@@ -31,7 +31,7 @@ namespace OOP_lab9_Multithreading
             Console.WriteLine(warehouse);
 
             List<Good> samples = new List<Good>();//образцы товаров
-            Good sample_good1 = new Good("Winchester", 6);
+            Good sample_good1 = new Good("HDD", 6);
             Good sample_good2 = new Good("Video card", 10);
             Good sample_good3 = new Good("CPU", 2);
             samples.Add(sample_good1);
@@ -52,8 +52,9 @@ namespace OOP_lab9_Multithreading
 
             maker1.makeGood(sample_good1, "SSD AI-34.2");
 
-            maker1.show();
-            maker2.show();
+            //maker1.show();
+            //maker2.show();
+            warehouse.showGoods();
 
 
 

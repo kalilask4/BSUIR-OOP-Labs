@@ -42,6 +42,15 @@ namespace OOP_lab9_Multithreading
             Console.WriteLine($"<= {good.name}, {good.model} от производителя {good.maker.Name} доставлен на склад");
         }
 
+        public void showGoods()
+        {
+            foreach (Good good in goods)
+            {
+                Console.WriteLine(good.name);
+            }
+
+        }
+
         public override string ToString()
         {
             return $"{name}, вместимость {Capasity} ед.";

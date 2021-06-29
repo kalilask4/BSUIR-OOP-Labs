@@ -41,45 +41,43 @@ namespace OOP_lab9_Multithreading
             this.goods = goods;
         }
 
-        public Maker(string name, double time_coef, List<Good> sample_goods)
+       /* public Maker(string name, double time_coef, List<Good> sample_goods)
         {
             this.name = name;
             this.time_coef = time_coef;
             this.sample_goods = sample_goods;
-            
-        }
+        }*/
 
         public void makeGood(Good sample_good, string model)
         {
-            Thread.Sleep((int)(this.time_coef*sample_good.base_produce_time) * 100);//время производства коэф. производителя * коэф. продукта
+            Thread.Sleep((int)(this.time_coef * sample_good.base_produce_time) * 100);//время производства коэф. производителя * коэф. продукта
             Good good = new Good(sample_good, this, model);
             Console.WriteLine($"...произведен {good.name}");
             goods.Add(good);
-            //goods_queue.Enqueue(good);
-            //return good;
         }
 
-        /*public void startProduction()
+        public void startProduction(Warehouse warehouse)
         {
-            while (sample_goods.Count<15)
+            while (goods.Count < warehouse.Capasity)
             {
-               Good good = new Good(this.sample_goods[random.Next(sample_goods.Count)], this, "m-" + DateTime.Now.Second);
-            goods_queue.Enqueue(good);
-            Console.WriteLine($"...произведен {good.name}");
-            Thread.Sleep(2000);
+                Good sample_good = this.sample_goods[random.Next(sample_goods.Count)];
+                Thread.Sleep((int)(this.time_coef * sample_good.base_produce_time * 100));//время производства коэф. производителя * коэф. продукта
+                Good good = new Good(sample_good, this, "m-" + DateTime.Now.Second);
+                goods.Add(good);
+                Console.WriteLine($"...произведен {good.name}");
+                
             }
             Console.WriteLine($"Производство на {this.Name} остановлено");
-         
-        }*/
+        }
 
-        public void show()
+        /*public void show()
         {
             foreach (Good good in goods)
             {
                 Console.WriteLine(good.name);
             }
 
-        }
+        }*/
 
         public override string ToString()
         {
