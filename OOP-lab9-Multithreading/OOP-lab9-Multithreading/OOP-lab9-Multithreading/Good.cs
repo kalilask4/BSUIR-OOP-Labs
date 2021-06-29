@@ -11,7 +11,7 @@ namespace OOP_lab9_Multithreading
         public string name;
         public string model="no model";
         public Maker maker = new Maker("no Maker", 1, new List<Good>(), new List <Good>());
-        public double base_produce_time = 1;
+        public double base_produce_time;
 
         public Good(string name)
         {
@@ -31,7 +31,7 @@ namespace OOP_lab9_Multithreading
 
         public override string ToString()
         {
-            return $"{name} {model} {maker.Name} {base_produce_time}";
+            return $"{name} {model} {maker.Name}";
         }
 
 

@@ -62,12 +62,12 @@ namespace OOP_lab9_Multithreading
             {
                 Good sample_good = this.sample_goods[random.Next(sample_goods.Count)];
                 Thread.Sleep((int)(this.time_coef * sample_good.base_produce_time * 100));//время производства коэф. производителя * коэф. продукта
-                Good good = new Good(sample_good, this, "m-" + DateTime.Now.Second);
+                Good good = new Good(sample_good, this, "mx-" + DateTime.Now.Second);
                 goods.Add(good);
-                Console.WriteLine($"...произведен {good.name}");
+                Console.WriteLine($"... {this.Name} произведен {good.name}");
                 
             }
-            Console.WriteLine($"Производство на {this.Name} остановлено");
+            Console.WriteLine($"Склад заполнен. Производство на {this.Name} остановлено");
         }
 
         /*public void show()

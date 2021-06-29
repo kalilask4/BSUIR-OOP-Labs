@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace OOP_lab9_Multithreading
@@ -18,7 +19,7 @@ namespace OOP_lab9_Multithreading
             get => capacity;
             set
             {
-                if (value == 50 || value == 70 || value == 100 || value == 200)
+                if (value == 50 || value == 70 || value == 100 || value == 200 || value == 10)
                 {
                     capacity = value;
                 }
@@ -42,14 +43,37 @@ namespace OOP_lab9_Multithreading
             Console.WriteLine($"<= {good.name}, {good.model} от производителя {good.maker.Name} доставлен на склад");
         }
 
+        public bool checkWarehouse()
+        {
+            return this.goods.Count>0;
+        }
+
         public void showGoods()
         {
+            Console.WriteLine("Все тоавры на складе:");
             foreach (Good good in goods)
             {
-                Console.WriteLine(good.name);
+                Console.WriteLine(good);
             }
-
         }
+
+        public void marketing()
+        {
+            Console.WriteLine("Начаты покупки");
+            
+            while (true)
+            {
+                Random random = new Random();
+                if (!checkWarehouse())
+                    break;
+
+                int index = random.Next(goods.Count);
+                Console.WriteLine($"Куплен {goods[index]}"); ;
+                goods.RemoveAt(index);
+                Thread.Sleep(2000);
+            }
+        }
+
 
         public override string ToString()
         {
