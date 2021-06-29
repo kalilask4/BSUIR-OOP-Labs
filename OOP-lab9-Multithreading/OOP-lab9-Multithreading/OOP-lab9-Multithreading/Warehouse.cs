@@ -59,6 +59,7 @@ namespace OOP_lab9_Multithreading
 
         public void marketing()
         {
+            Thread.Sleep(3000);
             Console.WriteLine("Начаты покупки");
             
             while (true)

@@ -56,9 +56,9 @@ namespace OOP_lab9_Multithreading
             goods.Add(good);
         }
 
-        public void startProduction(Warehouse warehouse)
+        public void startProduction()
         {
-            while (goods.Count < warehouse.Capasity)
+            while (goods.Count < 10)//warehouse.Capasity)
             {
                 Good sample_good = this.sample_goods[random.Next(sample_goods.Count)];
                 Thread.Sleep((int)(this.time_coef * sample_good.base_produce_time * 100));//время производства коэф. производителя * коэф. продукта

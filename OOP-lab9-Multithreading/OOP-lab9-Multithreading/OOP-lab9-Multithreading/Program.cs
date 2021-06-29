@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace OOP_lab9_Multithreading
 {
@@ -57,15 +58,25 @@ namespace OOP_lab9_Multithreading
             makers.Add(maker2); 
             makers.Add(maker3);
 
-            maker1.makeGood(sample_good1, "SSD AI-34.2");
+            //maker1.makeGood(sample_good1, "SSD AI-34.2");
 
-            maker1.startProduction(warehouse);
-            maker2.startProduction(warehouse);
-            maker3.startProduction(warehouse);
+            //maker1.startProduction(warehouse);
+            //maker2.startProduction(warehouse);
+            //maker3.startProduction(warehouse);
+            
+            
+            
+            Thread prodMaker1 = new Thread(new ThreadStart(maker1.startProduction));
+            prodMaker1.Start();
+            Thread prodMaker2 = new Thread(new ThreadStart(maker2.startProduction));
+            prodMaker2.Start();
+            Thread prodMaker3 = new Thread(new ThreadStart(maker3.startProduction));
+            prodMaker3.Start();
+
+            Thread marketing = new Thread(new ThreadStart(warehouse.marketing));
+            marketing.Start();
 
 
-            //maker1.show();
-            //maker2.show();
             Console.WriteLine();
             warehouse.showGoods();
 
