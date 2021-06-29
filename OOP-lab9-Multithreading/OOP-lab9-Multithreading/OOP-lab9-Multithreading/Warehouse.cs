@@ -11,7 +11,7 @@ namespace OOP_lab9_Multithreading
         public string name = "Warehouse Socket";
         private int capacity;
         List<Good> goods;
-
+       
 
         public int Capasity
         {
@@ -34,6 +34,12 @@ namespace OOP_lab9_Multithreading
         {
             Capasity = capasity;
             this.goods = goods;
+        }
+
+        public void addGood(Good good)
+        {
+            goods.Add(good);
+            Console.WriteLine($"<= {good.name}, {good.model} от производителя {good.maker.Name} доставлен на склад");
         }
 
         public override string ToString()

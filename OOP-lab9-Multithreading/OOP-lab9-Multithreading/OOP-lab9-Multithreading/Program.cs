@@ -21,8 +21,12 @@ namespace OOP_lab9_Multithreading
             //        куплен
             //        переучет
 
+
+
             Random random = new Random();
+            Queue<Good> goods_queue = new Queue<Good>();
             List<Good> goods = new List<Good>();
+            
             Warehouse warehouse = new Warehouse(50, goods);
             Console.WriteLine(warehouse);
 
@@ -38,12 +42,24 @@ namespace OOP_lab9_Multithreading
                 Console.WriteLine(good.ToString());
             }
 
-            Maker maker1 = new Maker("Gigabite", 7);
-            Maker maker2 = new Maker("AMD", 3);
-            Maker maker3 = new Maker("HP", 2);
+            Maker maker1 = new Maker("Gigabite", 7, samples, goods);
+            Maker maker2 = new Maker("AMD", 3, samples, goods);
+            Maker maker3 = new Maker("HP", 2, samples, goods);
+            List<Maker> makers = new List<Maker>();
+            makers.Add(maker1); 
+            makers.Add(maker2); 
+            makers.Add(maker3);
 
-            goods.Add(maker1.makeGood(sample_good1, "SSD AI-34.2"));
-            goods.Add(maker2.makeGood(sample_good2, "ARKI-X 2.2"));
+            maker1.makeGood(sample_good1, "SSD AI-34.2");
+
+            maker1.show();
+            maker2.show();
+
+
+
+
+            //goods.Add(maker1.makeGood(sample_good1, "SSD AI-34.2"));
+            //goods.Add(maker2.makeGood(sample_good2, "ARKI-X 2.2"));
 
             //Maker maker1 = new Maker("Gigabite", "Small_scale");
             //Console.WriteLine(maker1.ToString());
@@ -52,6 +68,11 @@ namespace OOP_lab9_Multithreading
             //Maker maker3 = new Maker("HP", );
             //Console.WriteLine(maker1.ToString());
 
+           /* static void startProduction()
+            {
+                maker1.makeGood(sample_good1, "SSD AI-34.2")
+
+            }*/
 
         }
     }
