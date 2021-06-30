@@ -64,13 +64,11 @@ namespace OOP_lab9_Multithreading
                 {
                     if (Warehouse.checkWarehouseIsOpen())
                     {
-
-                    
-                    Good sample_good = this.sample_goods[random.Next(sample_goods.Count)];
-                    Thread.Sleep((int)(this.time_coef * sample_good.base_produce_time * 100));//время производства коэф. производителя * коэф. продукта
-                    Good good = new Good(sample_good, this, "mx-" + DateTime.Now.Second);
-                    goods.Add(good);
-                    Console.WriteLine($"<... Компанией {this.Name} произведен {good.name}.");
+                        Good sample_good = this.sample_goods[random.Next(sample_goods.Count)];
+                        Thread.Sleep((int)(this.time_coef * sample_good.base_produce_time * 100));//время производства коэф. производителя * коэф. продукта
+                        Good good = new Good(sample_good, this, "mx-" + DateTime.Now.Second);
+                        goods.Add(good);
+                        Console.WriteLine($"<... Компанией {this.Name} произведен {good.name}.");
                     }
                     else
                     {
@@ -79,13 +77,13 @@ namespace OOP_lab9_Multithreading
                 }
                 else
                 {
-                    
-                        Console.WriteLine($"Склад заполнен. Производство на {this.Name} приостановлено.");
+
+                    Console.WriteLine($"Склад заполнен. Производство на {this.Name} приостановлено.");
                     Thread.Sleep(18000);  //18 с - хорошее время для демонстрации при вместимости 5 - успевают раскупить
                     if (Warehouse.checkWarehouseIsOpen())
                     {
                         Console.WriteLine($"Производство на {this.Name} возобновлено.");
-                   
+
                         continue;
                     }
                     else
@@ -95,19 +93,8 @@ namespace OOP_lab9_Multithreading
                         break;
                     }
                 }
-
             }
-
         }
-
-        /*public void show()
-        {
-            foreach (Good good in goods)
-            {
-                Console.WriteLine(good.name);
-            }
-
-        }*/
 
         public override string ToString()
         {

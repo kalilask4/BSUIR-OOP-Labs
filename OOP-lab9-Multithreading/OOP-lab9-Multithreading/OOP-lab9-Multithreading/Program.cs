@@ -64,9 +64,6 @@ namespace OOP_lab9_Multithreading
             
             Thread prodMaker1 = new Thread(new ThreadStart(maker1.startProduction));
             prodMaker1.Start();
-            //Thread.Sleep(17000);
-            
-
             Thread prodMaker2 = new Thread(new ThreadStart(maker2.startProduction));
             prodMaker2.Start();
             Thread prodMaker3 = new Thread(new ThreadStart(maker3.startProduction));
@@ -75,47 +72,8 @@ namespace OOP_lab9_Multithreading
             Thread marketing = new Thread(new ThreadStart(warehouse.marketing));
             marketing.Start();
 
-
             Console.WriteLine();
             warehouse.showGoods();
-
-            //warehouse.marketing();
-
-            //goods.Add(maker1.makeGood(sample_good1, "SSD AI-34.2"));
-            //goods.Add(maker2.makeGood(sample_good2, "ARKI-X 2.2"));
-
-            //Maker maker1 = new Maker("Gigabite", "Small_scale");
-            //Console.WriteLine(maker1.ToString());
-            //Maker maker2 = new Maker("AMD", );
-            //Console.WriteLine(maker1.ToString());
-            //Maker maker3 = new Maker("HP", );
-            //Console.WriteLine(maker1.ToString());
-
-            /* static void startProduction()
-             {
-                 maker1.makeGood(sample_good1, "SSD AI-34.2")
-
-             }*/
-
-            /*
-            maker1.makeGood(sample_good5, "ee");
-            maker1.makeGood(sample_good5, "ee");
-            maker1.makeGood(sample_good5, "ee");
-            maker1.makeGood(sample_good5, "ee");
-            maker1.makeGood(sample_good5, "ee");
-            //Thread.Sleep(7000);
-            goods.RemoveAt(0);
-            goods.RemoveAt(1);
-            goods.RemoveAt(2);
-            foreach(Good good in goods)
-            {
-                Console.WriteLine($"{good}");
-                Console.WriteLine($"{goods.IndexOf(good)}");
-
-            }
-            Console.WriteLine(goods.Count);
-            //goods.RemoveAt(2);*/
-
 
 
             Console.WriteLine();

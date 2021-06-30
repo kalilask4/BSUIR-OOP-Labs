@@ -35,13 +35,6 @@ namespace OOP_lab9_Multithreading
         }
 
 
-        /*public Good(string name, string model, Maker maker, int produce_time)
-        {
-            this.name = name;
-            this.model = model;
-            this.maker = maker;
-            this.base_produce_time = produce_time;
-        }*/
 
 
 
