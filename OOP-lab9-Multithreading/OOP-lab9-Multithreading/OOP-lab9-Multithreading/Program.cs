@@ -24,13 +24,11 @@ namespace OOP_lab9_Multithreading
             //        куплен
             //        переучет
 
-
-
             Random random = new Random();
             Queue<Good> goods_queue = new Queue<Good>();
             List<Good> goods = new List<Good>();
             
-            Warehouse warehouse = new Warehouse(10, goods);
+            Warehouse warehouse = new Warehouse(5, goods); //при вместимости около 10 раскупать не успевают
             Console.WriteLine(warehouse);
             Console.WriteLine();
 
@@ -53,10 +51,10 @@ namespace OOP_lab9_Multithreading
             Maker maker1 = new Maker("Gigabite", 7, samples, goods);
             Maker maker2 = new Maker("AMD", 3, samples, goods);
             Maker maker3 = new Maker("HP", 2, samples, goods);
-            List<Maker> makers = new List<Maker>();
+            /*List<Maker> makers = new List<Maker>();
             makers.Add(maker1); 
             makers.Add(maker2); 
-            makers.Add(maker3);
+            makers.Add(maker3);*/
 
             //maker1.makeGood(sample_good1, "SSD AI-34.2");
 
@@ -64,10 +62,11 @@ namespace OOP_lab9_Multithreading
             //maker2.startProduction(warehouse);
             //maker3.startProduction(warehouse);
             
-            
-            
             Thread prodMaker1 = new Thread(new ThreadStart(maker1.startProduction));
             prodMaker1.Start();
+            //Thread.Sleep(17000);
+            
+
             Thread prodMaker2 = new Thread(new ThreadStart(maker2.startProduction));
             prodMaker2.Start();
             Thread prodMaker3 = new Thread(new ThreadStart(maker3.startProduction));
@@ -80,9 +79,7 @@ namespace OOP_lab9_Multithreading
             Console.WriteLine();
             warehouse.showGoods();
 
-            warehouse.marketing();
-
-
+            //warehouse.marketing();
 
             //goods.Add(maker1.makeGood(sample_good1, "SSD AI-34.2"));
             //goods.Add(maker2.makeGood(sample_good2, "ARKI-X 2.2"));
@@ -100,7 +97,31 @@ namespace OOP_lab9_Multithreading
 
              }*/
 
-             
+            /*
+            maker1.makeGood(sample_good5, "ee");
+            maker1.makeGood(sample_good5, "ee");
+            maker1.makeGood(sample_good5, "ee");
+            maker1.makeGood(sample_good5, "ee");
+            maker1.makeGood(sample_good5, "ee");
+            //Thread.Sleep(7000);
+            goods.RemoveAt(0);
+            goods.RemoveAt(1);
+            goods.RemoveAt(2);
+            foreach(Good good in goods)
+            {
+                Console.WriteLine($"{good}");
+                Console.WriteLine($"{goods.IndexOf(good)}");
+
+            }
+            Console.WriteLine(goods.Count);
+            //goods.RemoveAt(2);*/
+
+
+
+            Console.WriteLine();
+            Console.WriteLine("--Работа программы окончена--");
+
+
             Console.ReadKey();
         }
     }

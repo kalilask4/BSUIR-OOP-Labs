@@ -58,16 +58,46 @@ namespace OOP_lab9_Multithreading
 
         public void startProduction()
         {
-            while (goods.Count < 10)//warehouse.Capasity)
+            while (Warehouse.isopen)
             {
-                Good sample_good = this.sample_goods[random.Next(sample_goods.Count)];
-                Thread.Sleep((int)(this.time_coef * sample_good.base_produce_time * 100));//время производства коэф. производителя * коэф. продукта
-                Good good = new Good(sample_good, this, "mx-" + DateTime.Now.Second);
-                goods.Add(good);
-                Console.WriteLine($"... {this.Name} произведен {good.name}");
-                
+                if (goods.Count < Warehouse.capacity & Warehouse.isopen)//warehouse.Capasity)
+                {
+                    if (Warehouse.checkWarehouseIsOpen())
+                    {
+
+                    
+                    Good sample_good = this.sample_goods[random.Next(sample_goods.Count)];
+                    Thread.Sleep((int)(this.time_coef * sample_good.base_produce_time * 100));//время производства коэф. производителя * коэф. продукта
+                    Good good = new Good(sample_good, this, "mx-" + DateTime.Now.Second);
+                    goods.Add(good);
+                    Console.WriteLine($"<... Компанией {this.Name} произведен {good.name}.");
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    
+                        Console.WriteLine($"Склад заполнен. Производство на {this.Name} приостановлено.");
+                    Thread.Sleep(18000);  //18 с - хорошее время для демонстрации при вместимости 5 - успевают раскупить
+                    if (Warehouse.checkWarehouseIsOpen())
+                    {
+                        Console.WriteLine($"Производство на {this.Name} возобновлено.");
+                   
+                        continue;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Производство на {this.Name} остановлено.");
+
+                        break;
+                    }
+                }
+
             }
-            Console.WriteLine($"Склад заполнен. Производство на {this.Name} остановлено");
+
         }
 
         /*public void show()

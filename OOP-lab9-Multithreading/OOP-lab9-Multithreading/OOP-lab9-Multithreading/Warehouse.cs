@@ -10,7 +10,8 @@ namespace OOP_lab9_Multithreading
     class Warehouse
     {
         public string name = "Warehouse Socket";
-        private int capacity;
+        public static int capacity;        //доработать. инкапсуляция!
+        public static bool isopen=true;    //доработать. инкапсуляция!
         List<Good> goods;
        
 
@@ -19,13 +20,13 @@ namespace OOP_lab9_Multithreading
             get => capacity;
             set
             {
-                if (value == 50 || value == 70 || value == 100 || value == 200 || value == 10)
+                if (value == 20 || value == 50 || value == 100 || value == 10 || value == 5)
                 {
                     capacity = value;
                 }
                 else
                 {
-                    new Exception("Неверный размер склада (возможные варианты: 50, 70, 100, 200");
+                    new Exception("Неверный размер склада (возможные варианты: 10, 20, 50, 100, 5");
                 }
 
             }
@@ -43,9 +44,18 @@ namespace OOP_lab9_Multithreading
             Console.WriteLine($"<= {good.name}, {good.model} от производителя {good.maker.Name} доставлен на склад");
         }
 
-        public bool checkWarehouse()
+        public bool checkGoodsWarehouse()
         {
             return this.goods.Count>0;
+        }
+
+        public static bool checkWarehouseIsOpen()
+        {
+            if (!Warehouse.isopen)
+            {
+                //Console.WriteLine("Склад закрыт.");
+            }
+            return Warehouse.isopen;
         }
 
         public void showGoods()
@@ -59,19 +69,31 @@ namespace OOP_lab9_Multithreading
 
         public void marketing()
         {
-            Thread.Sleep(3000);
-            Console.WriteLine("Начаты покупки");
+            Thread.Sleep(1000);
+            Console.WriteLine("--Начаты покупки--");
             
             while (true)
             {
                 Random random = new Random();
-                if (!checkWarehouse())
+                if (!checkGoodsWarehouse())
+                {
+                    Console.WriteLine("Переучет.");
+                    Warehouse.isopen = false;
+                    Console.WriteLine("Покупки прекращены - склад закрыт.");
                     break;
+                }
 
-                int index = random.Next(goods.Count);
-                Console.WriteLine($"Куплен {goods[index]}"); ;
-                goods.RemoveAt(index);
+                var item = goods.OrderBy(s => random.NextDouble()).First();
+                Console.Write($"=> Куплен {item.ToString()}. "); 
+                goods.Remove(item);
+                Console.WriteLine($"На складе осталось {goods.Count} товаров. ");
                 Thread.Sleep(2000);
+
+               /* int index = random.Next(goods.Count);
+                Console.WriteLine($"=> Куплен {index}{goods[index]}"); ;
+                goods.RemoveAt(index);
+                Console.WriteLine($"На складе {goods.Count} товаров");
+                Thread.Sleep(2000);*/
             }
         }
 
