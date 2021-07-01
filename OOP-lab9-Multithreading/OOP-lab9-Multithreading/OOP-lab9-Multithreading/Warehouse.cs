@@ -28,7 +28,6 @@ namespace OOP_lab9_Multithreading
                 {
                     new Exception("Неверный размер склада (возможные варианты: 10, 20, 50, 100, 5");
                 }
-
             }
         }
 
@@ -83,6 +82,7 @@ namespace OOP_lab9_Multithreading
                     break;
                 }
 
+                lock (goods) ;
                 var item = goods.OrderBy(s => random.NextDouble()).First();
                 Console.Write($"=> Куплен {item.ToString()}. "); 
                 goods.Remove(item);
@@ -96,7 +96,6 @@ namespace OOP_lab9_Multithreading
                 Thread.Sleep(2000);*/
             }
         }
-
 
         public override string ToString()
         {

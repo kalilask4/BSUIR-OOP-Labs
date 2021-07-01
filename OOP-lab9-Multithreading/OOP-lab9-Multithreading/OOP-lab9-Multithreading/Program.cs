@@ -31,6 +31,7 @@ namespace OOP_lab9_Multithreading
             Warehouse warehouse = new Warehouse(5, goods); //при вместимости около 10 раскупать не успевают
             Console.WriteLine(warehouse);
             Console.WriteLine();
+            
 
             List<Good> samples = new List<Good>();//образцы товаров
             Good sample_good1 = new Good("HDD", 6);
@@ -51,16 +52,23 @@ namespace OOP_lab9_Multithreading
             Maker maker1 = new Maker("Gigabite", 7, samples, goods);
             Maker maker2 = new Maker("AMD", 3, samples, goods);
             Maker maker3 = new Maker("HP", 2, samples, goods);
-            /*List<Maker> makers = new List<Maker>();
+            List<Maker> makers = new List<Maker>();
             makers.Add(maker1); 
             makers.Add(maker2); 
-            makers.Add(maker3);*/
+            makers.Add(maker3);
+            foreach (Maker maker in makers)
+            {
+                Console.WriteLine(maker.ToString());
+            }
 
             //maker1.makeGood(sample_good1, "SSD AI-34.2");
 
             //maker1.startProduction(warehouse);
             //maker2.startProduction(warehouse);
             //maker3.startProduction(warehouse);
+            Console.WriteLine();
+            Console.WriteLine("--Работа программы в потоках начата--");
+
             
             Thread prodMaker1 = new Thread(new ThreadStart(maker1.startProduction));
             prodMaker1.Start();
@@ -68,19 +76,13 @@ namespace OOP_lab9_Multithreading
             prodMaker2.Start();
             Thread prodMaker3 = new Thread(new ThreadStart(maker3.startProduction));
             prodMaker3.Start();
-
+            
             Thread marketing = new Thread(new ThreadStart(warehouse.marketing));
             marketing.Start();
 
-            Console.WriteLine();
-            warehouse.showGoods();
-
-
-            Console.WriteLine();
-            Console.WriteLine("--Работа программы окончена--");
-
-
-            Console.ReadKey();
+            //Console.WriteLine();
+            //warehouse.showGoods();
+       
         }
     }
 }

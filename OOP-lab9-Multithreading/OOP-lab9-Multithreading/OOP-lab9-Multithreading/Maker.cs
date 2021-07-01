@@ -15,7 +15,6 @@ namespace OOP_lab9_Multithreading
         Random random = new Random();
         List<Good> goods = new List<Good>();
 
-
         //public enum SCALE { Unit = 100, SmallScale = 40, MediumScale = 20, BigScale = 10, Mass = 1, };//чем выше масштаб производства, тем быстрее производиться тот или иной товар
         //(здесь коэффициент - для расчета времени производства от базового))
         //свыше 40 — единичное производство;
@@ -40,13 +39,6 @@ namespace OOP_lab9_Multithreading
             this.sample_goods = sample_goods;
             this.goods = goods;
         }
-
-       /* public Maker(string name, double time_coef, List<Good> sample_goods)
-        {
-            this.name = name;
-            this.time_coef = time_coef;
-            this.sample_goods = sample_goods;
-        }*/
 
         public void makeGood(Good sample_good, string model)
         {

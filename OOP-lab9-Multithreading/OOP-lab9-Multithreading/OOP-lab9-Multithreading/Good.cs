@@ -34,9 +34,5 @@ namespace OOP_lab9_Multithreading
             return $"{name} {model} {maker.Name}";
         }
 
-
-
-
-
     }
 }
