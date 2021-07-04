@@ -102,6 +102,12 @@ namespace OOP_lab2
             return r;
         }
 
+        public static explicit operator double(Rational a)
+        {
+            return (a.Nominator / (double)a.Denominator);
+        }
+
+
         private static int[] to_rational(double d)
         {
             int counter = 0;

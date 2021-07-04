@@ -44,6 +44,25 @@ namespace OOP_lab2
             Rational r7 = d1;//неявное приведение
             Console.WriteLine($"r7 = {r7}");
 
+            double d3 = (double)r7;
+            Console.WriteLine($"d3 = {d3}");
+
+            Rational r8 = new Rational(6, 5);
+            Console.WriteLine($"r8 = {r8}");
+            double d2 = (double)r8; //явное приведение
+            Console.WriteLine($"d2 = (double)r8 = {d2}");
+            Rational r9 = d2;//неявное приведение
+            Console.WriteLine($"r9 = d2 = {r9} ");
+
+            Console.WriteLine("--Rational to double--");
+            Console.WriteLine("Приведем -71,1 к рациональному и наоборот");
+            double d4 = -71.10;
+            Rational r10 = d4;
+            Console.WriteLine($"r10 = d4: {d4} -> {r10} ");
+            double d5 = (double)r10;
+            Console.WriteLine($"d5 = r10: {r10} -> {d5} ");
+
+
 
 
 
