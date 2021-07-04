@@ -87,6 +87,15 @@ namespace OOP_lab2
             Rational r20 = r14 * r15;
             Console.WriteLine($"Mul: {r14} * {r15} = {r20}");
 
+            Console.WriteLine("--operator++--------");
+            Rational r21 = r20++;
+            Console.WriteLine($"++: {r20++} = {r21}");
+
+            Console.WriteLine("operator--");
+            Rational r22 = r21--;
+            Console.WriteLine($"--: {r22}-- {r22--}");
+
+
 
 
 

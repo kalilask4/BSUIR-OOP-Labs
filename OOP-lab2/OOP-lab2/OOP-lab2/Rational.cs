@@ -92,6 +92,22 @@ namespace OOP_lab2
             return new Rational(a_n * b_n, a_d * b_d);
         }
 
+        public static Rational operator ++(Rational a)
+        {
+            int a_n = a.nominator;
+            int a_d = a.denominator;
+
+            return new Rational(a_n + 1, a_d);
+        }
+
+        public static Rational operator --(Rational a)
+        {
+            int a_n = a.nominator;
+            int a_d = a.denominator;
+
+            return new Rational(a_n - 1, a_d);
+        }
+
 
 
 
