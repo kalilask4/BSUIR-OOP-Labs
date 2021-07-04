@@ -75,6 +75,12 @@ namespace OOP_lab2
             double d9 = d7 + d8;
             Console.WriteLine($"summ: {d7} + {d8} = {d9}. d6 = {d6}"); //для проверки
 
+            Console.WriteLine("--Subtraction---------");
+            Rational r14 = new Rational(3, 27);
+            Rational r15 = new Rational(2, 27);
+            Rational r16 = r14 - r15;
+            Console.WriteLine($"Sub: {r14} - {r15} = {r16}");
+
 
 
 
