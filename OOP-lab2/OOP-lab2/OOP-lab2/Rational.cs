@@ -92,5 +92,14 @@ namespace OOP_lab2
             return 0;
         }
 
+        public override string ToString()
+        {
+            if (Denominator == 1)
+                return $"{Nominator:#}";
+            else
+                return $"{Nominator:#}/{Denominator:#}";
+        }
+
+
     }
 }
