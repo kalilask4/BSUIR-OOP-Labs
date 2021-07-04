@@ -68,6 +68,14 @@ namespace OOP_lab2
             Rational r13 = r11 + r12;
             Console.WriteLine($"summ: {r11} + {r12} = {r13}");
 
+            //Для проверки приведем к double и сравним суммы
+            double d6 = (double)r13;
+            double d7 = (double)r11;
+            double d8 = (double)r12;
+            double d9 = d7 + d8;
+            Console.WriteLine($"summ: {d7} + {d8} = {d9}. d6 = {d6}"); //для проверки
+
+
 
 
 
