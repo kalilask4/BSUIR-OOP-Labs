@@ -62,6 +62,13 @@ namespace OOP_lab2
             double d5 = (double)r10;
             Console.WriteLine($"d5 = r10: {r10} -> {d5} ");
 
+            Console.WriteLine("---Summ--------------");
+            Rational r11 = new Rational(2, 27);//(5, 6);
+            Rational r12 = new Rational(3, 36);//(4, 9);
+            Rational r13 = r11 + r12;
+            Console.WriteLine($"summ: {r11} + {r12} = {r13}");
+
+
 
 
 

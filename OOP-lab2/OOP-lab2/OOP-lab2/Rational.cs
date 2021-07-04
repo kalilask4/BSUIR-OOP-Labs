@@ -62,6 +62,22 @@ namespace OOP_lab2
             Denominator = denominator;
         }
 
+
+        public static Rational operator +(Rational a, Rational b)
+        {
+            int a_n = a.nominator;
+            int b_n = b.nominator;
+            int a_d = a.denominator;
+            int b_d = b.denominator;
+
+            return new Rational(a_n * b_d + b_n * a_d, a_d * b_d);
+        }
+
+
+
+
+
+
         private static int normalization(int nominator, int denominator)
         {
             if (nominator == 0 | denominator == 0)
