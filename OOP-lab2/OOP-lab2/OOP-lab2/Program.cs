@@ -81,6 +81,13 @@ namespace OOP_lab2
             Rational r16 = r14 - r15;
             Console.WriteLine($"Sub: {r14} - {r15} = {r16}");
 
+            Console.WriteLine("--Multiplication------");
+            //Rational r14 = new Rational(3, 27);
+            //Rational r15 = new Rational(2, 27);
+            Rational r20 = r14 * r15;
+            Console.WriteLine($"Mul: {r14} * {r15} = {r20}");
+
+
 
 
 

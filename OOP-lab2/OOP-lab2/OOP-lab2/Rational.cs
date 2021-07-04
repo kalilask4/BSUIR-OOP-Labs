@@ -62,7 +62,6 @@ namespace OOP_lab2
             Denominator = denominator;
         }
 
-
         public static Rational operator +(Rational a, Rational b)
         {
             int a_n = a.nominator;
@@ -72,7 +71,6 @@ namespace OOP_lab2
 
             return new Rational(a_n * b_d + b_n * a_d, a_d * b_d);
         }
-
 
         public static Rational operator -(Rational a, Rational b)
         {
@@ -84,6 +82,15 @@ namespace OOP_lab2
             return new Rational(a_n * b_d + b_n * a_d, a_d * b_d);
         }
 
+        public static Rational operator *(Rational a, Rational b)
+        {
+            int a_n = a.nominator;
+            int b_n = b.nominator;
+            int a_d = a.denominator;
+            int b_d = b.denominator;
+
+            return new Rational(a_n * b_n, a_d * b_d);
+        }
 
 
 
