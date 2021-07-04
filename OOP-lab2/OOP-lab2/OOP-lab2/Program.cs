@@ -20,14 +20,32 @@ namespace OOP_lab2
             }
             try
             {
-                Rational r3 = new Rational(0, 1); //здесь будет обработано исключение (числитель !=0)
-                Console.WriteLine($"r3={r3}");
+                //Rational r3 = new Rational(0, 1); //здесь будет обработано исключение (числитель !=0)
+                //Console.WriteLine($"r3={r3}");
 
             }
             catch (Exception e)
             {
                 Console.WriteLine($"исключение - {e.Message}");
             }
+
+            Console.WriteLine($"В конструктор передаем 9,-3");
+            Rational r4 = new Rational(9, -3);
+            Console.WriteLine($"r4={r4}");
+            Console.WriteLine($"В конструктор передаем -9,-3");
+            Rational r5 = new Rational(-9, -3);
+            Console.WriteLine($"r5={r5}");
+            Console.WriteLine($"В конструктор передаем 10,-3");
+            Rational r6 = new Rational(10, -3);
+            Console.WriteLine($"r6={r6}");
+            Console.WriteLine("-----------------");
+            //приведение типа
+            double d1 = -19.5;
+            Rational r7 = d1;//неявное приведение
+            Console.WriteLine($"r7 = {r7}");
+
+
+
 
         }
     }

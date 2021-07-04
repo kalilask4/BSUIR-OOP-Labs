@@ -92,6 +92,41 @@ namespace OOP_lab2
             return 0;
         }
 
+        //неявная перегрузка
+        public static implicit operator Rational(double d)
+        {
+            var array_nd = new int[2];
+            array_nd = to_rational(d);
+            Rational r = new Rational(array_nd[0], array_nd[1]);
+            Console.WriteLine(r);
+            return r;
+        }
+
+        private static int[] to_rational(double d)
+        {
+            int counter = 0;
+
+            //Находим показатель степени десятки такой, чтобы получить 11.55 * 10 ^ counter = 1155
+            //последовательно умножаем 11.55 на 10
+            while (d % 1 != 0)
+            {
+                d *= 10;
+                counter++;
+            }
+
+            //nominator = 1155
+            //denominator = 10 ^ counter = 10 ^ 2 = 100
+            int nominator = (int)d;
+            int denominator = (int)Math.Pow(10, counter);
+            var array_nd = new int[2];
+            array_nd[0] = nominator;
+            array_nd[1] = denominator;
+
+            return array_nd;
+        }
+
+
+
         public override string ToString()
         {
             if (Denominator == 1)
