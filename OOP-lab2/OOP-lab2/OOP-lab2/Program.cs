@@ -114,7 +114,6 @@ namespace OOP_lab2
                 Console.WriteLine($"{r24} - false");
             }
 
-            Console.WriteLine(r25);
             if (r25)
             {
                 Console.WriteLine($"{r25} - true");
@@ -124,13 +123,23 @@ namespace OOP_lab2
                 Console.WriteLine($"{r25} - false");
             }
 
-
-
-
-
-
-
-
+            Console.WriteLine("--indexer -------");
+            try
+            {
+            Console.WriteLine($"{r20} > r20[0] = {r20[0]}, r20[1] = {r20[1]}");
+            Console.WriteLine($"{r20[2]}");
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine($"исключение -  { e.Message}");
+            }
+            Console.Write($"{r6} > r6[0] = 2: ");
+            r6[0]=2;
+            Console.WriteLine(r6.ToString());
+            Console.Write($"{r6} > r6[1] = 5: ");
+            r6[1] = 5;
+            Console.WriteLine(r6.ToString());
+           
 
 
 

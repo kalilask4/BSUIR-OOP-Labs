@@ -62,6 +62,27 @@ namespace OOP_lab2
             Denominator = denominator;
         }
 
+        public double this[int index]
+        {
+            get
+            {
+                if (index == 0)
+                    return Nominator;
+                if (index == 1)
+                    return Denominator;
+                throw new Exception("неверный индекс");
+            }
+            set
+            {
+                if (index == 0)
+                    Nominator = (int)value;
+                if (index == 1)
+                    Denominator = (int)value;
+                
+
+            }
+        }
+
         public static Rational operator +(Rational a, Rational b)
         {
             int a_n = a.nominator;
