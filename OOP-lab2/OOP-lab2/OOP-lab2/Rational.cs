@@ -149,9 +149,6 @@ namespace OOP_lab2
             return a.nominator == 0;
         }
 
-
-
-
         private static int normalization(int nominator, int denominator)
         {
             if (/*nominator == 0 | */denominator == 0)
@@ -197,7 +194,6 @@ namespace OOP_lab2
             return (a.Nominator / (double)a.Denominator);
         }
 
-
         private static int[] to_rational(double d)
         {
             int counter = 0;
@@ -221,8 +217,6 @@ namespace OOP_lab2
             return array_nd;
         }
 
-
-
         public override string ToString()
         {
             if (Denominator == 1)
@@ -230,7 +224,5 @@ namespace OOP_lab2
             else
                 return $"{nominator}/{Denominator:#}";
         }
-
-
     }
 }

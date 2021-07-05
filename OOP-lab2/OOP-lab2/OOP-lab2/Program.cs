@@ -131,7 +131,7 @@ namespace OOP_lab2
             }
             catch(Exception e)
             {
-                Console.WriteLine($"исключение -  { e.Message}");
+                Console.WriteLine($"r20[2] - исключение -  { e.Message}");
             }
             Console.Write($"{r6} > r6[0] = 2: ");
             r6[0]=2;
@@ -140,10 +140,6 @@ namespace OOP_lab2
             r6[1] = 5;
             Console.WriteLine(r6.ToString());
            
-
-
-
-
         }
     }
 }
