@@ -19,10 +19,10 @@ namespace OOP_lab2
 
             set
             {
-                if (value == 0)
+                /*if (value == 0)
                     throw new Exception("неверный числитель");
-                else
-                    nominator = value;
+                else*/
+                nominator = value;
             }
         }
 
@@ -108,15 +108,34 @@ namespace OOP_lab2
             return new Rational(a_n - 1, a_d);
         }
 
+        public static bool operator ==(Rational a, Rational b)
+        {
+            return a.nominator == b.nominator & a.denominator == b.denominator;
+        }
+
+        public static bool operator !=(Rational a, Rational b)
+        {
+            return a.nominator != b.nominator | a.denominator != b.denominator;
+        }
+
+        public static bool operator true(Rational a)
+        {
+            return a.nominator != 0;
+        }
+
+        public static bool operator false(Rational a)
+        {
+            return a.nominator == 0;
+        }
 
 
 
 
         private static int normalization(int nominator, int denominator)
         {
-            if (nominator == 0 | denominator == 0)
+            if (/*nominator == 0 | */denominator == 0)
                 throw new Exception("неверный числитель или знаменатель");
-            else if (nominator / denominator == 0 | denominator / nominator == 0)
+            else if (nominator / denominator == 0 /*| denominator / nominator == 0*/)
             {
                 return Nod(nominator, denominator);
             }
@@ -188,7 +207,7 @@ namespace OOP_lab2
             if (Denominator == 1)
                 return $"{Nominator:#}";
             else
-                return $"{Nominator:#}/{Denominator:#}";
+                return $"{nominator}/{Denominator:#}";
         }
 
 

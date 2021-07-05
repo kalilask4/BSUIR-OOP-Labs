@@ -95,6 +95,38 @@ namespace OOP_lab2
             Rational r22 = r21--;
             Console.WriteLine($"--: {r22}-- {r22--}");
 
+            Console.WriteLine("--operator!= и ==-------");
+            Rational r23 = new Rational(3, 27);
+            Rational r24 = new Rational(3, 27);
+            Console.WriteLine($"==: {r23 == r24}");
+            Console.WriteLine($"!=: {r23 != r24}");
+            Console.WriteLine($"==: {r22 == r24}");
+            Console.WriteLine($"!=: {r22 != r24}");
+
+            Console.WriteLine("--operator true & false -------");
+            Rational r25 = new Rational(0, 4);
+            if (r24)
+            {
+                Console.WriteLine($"{r24} - true");
+            }
+            else
+            {
+                Console.WriteLine($"{r24} - false");
+            }
+
+            Console.WriteLine(r25);
+            if (r25)
+            {
+                Console.WriteLine($"{r25} - true");
+            }
+            else
+            {
+                Console.WriteLine($"{r25} - false");
+            }
+
+
+
+
 
 
 
